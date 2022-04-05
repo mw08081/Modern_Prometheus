@@ -35,14 +35,26 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 세부내용 : 발생시킨 전이 전기와 그 주변 인근 전기 흡수 메카니즘  
     - [ ] 흡수된 전이전기의 주변 전이전기 계산
     
-6. 기본 스킬과 학습스킬을 구분해서 데이터베이스에 플레이어정보 저장하는 시스템 구축  
-ㄴ인재님한테 기본 스킬에 대해 물어보기  
+6. ObtainSkill Sava System 구축
+세부내용 : 기본 스킬과 습득 스킬에 따른 ObtainSKill DB 구축
+    - [ ] 기본 스킬과 습득 스킬 정보 수집
+    - [ ] ObtainSkill Data 저장 메카니즘 구현
+    - [ ] ObtainSKill에 기본 스킬 초기화 메소드 구현
+    - [ ] 부활/게임로드의 스킬 데이터 초기화 메소드 구현
 
-7. 픽락  
+7. 픽락   
+세부내용 : 상호작용 PickLock 스킬 구현
 ㄴ사전작업 : IOpen  
+    - [ ] IOpen interface 구현  
+    - [ ] PickLock Debug 연출 구현  
+    ~~- 열쇠시스템~~  
+    ~~- 문 열림 애니메이션~~  
 
 8. 썬더  
-ㄴ사전작업 : DATA_SKILLRANGE_TABLE SO  
-
+세부내용 : RMB 스킬 썬더 스킬 구현
+ㄴ사전작업 : DATA_SKILLRANGE_TABLE DataBase 연동, ScriptableObject 생성  
+    - [ ] EXCELL 연동
+    - [ ] Scriptable Object 생성
+    - [ ] DataBase 연동
 
 ### 5주차
