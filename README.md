@@ -11,8 +11,9 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 ### 2주차(3.23. ~ 3.29.)
 1. IBIio 테이즈 구현  
 2. Iwater , IMetal 전기 전이 메카니즘  
-3. IElectricy - elecPoint 전기 흡수 메카니즘  
-4. 테이즈 시스템 조건 추가
+3. IElectricity - elecPoint 전기 흡수 메카니즘
+4. IElectricity 흡수 fadeOut Effect
+5. 테이즈 시스템 조건 추가
 
 ### 3주차(3.30. ~ 4.5.)
 1. 물 객체에 전기 전이 메카니즘 구현
