@@ -71,7 +71,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 8. 썬더  
 세부내용 : RMB 스킬 썬더 스킬 구현
 ㄴ사전작업 : DATA_SKILLRANGE_TABLE DataBase 연동, ScriptableObject 생성  
-    - [ ] EXCELL 연동
+    - [ ] EXCEL 연동
     - [ ] Scriptable Object 생성
     - [ ] DataBase 연동
 
