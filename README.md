@@ -20,7 +20,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 싱글톤 GameManager 제작
 
 ### 2주차(3.23. ~ 3.29.)
-1. Iwater , IMetal 전기 전이 메카니즘  
+1. Iter , IMetal 전기 전이 메카니즘  
 세부내용 : IWater, IMetal 인터페이스 구현하여 Qinteract를 통해 전기 전이 메카니즘 구현
     - [x] IWater interface
     - [x] IMetal interface
