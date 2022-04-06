@@ -82,8 +82,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [ ] IOpen interface 구현  
     - [ ] Player Skill CoolDown Dic 구현
     - [ ] PickLock Debug 연출 구현  
-    ~~- 열쇠시스템~~  
-    ~~- 문 열림 애니메이션~~  
+    - [ ] ~~열쇠시스템~~  
+    - [ ] ~~문 열림 애니메이션~~  
 
 8. 썬더  
 세부내용 : RMB 스킬 썬더 스킬 구현
