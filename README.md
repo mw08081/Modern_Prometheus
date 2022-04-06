@@ -11,25 +11,37 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 ### 2주차(3.23. ~ 3.29.)
 1. Iwater , IMetal 전기 전이 메카니즘  
 세부내용 : IWater, IMetal 인터페이스 구현하여 Qinteract를 통해 전기 전이 메카니즘 구현
-    - [ ] IWater interface
-    - [ ] IMetal interface
-    - [ ] interactQ 전기 부여 메카니즘 구현
+    - [x] IWater interface
+    - [x] IMetal interface
+    - [x] interactQ 전기 부여 메카니즘 구현
 
 2. IBio 전기 전이 메카니즘
 세부내용 : 전기전이 인터렉트 Q를 이용하여 IBio(Enemy) 테이즈 스킬 구현
-    - [ ] IBio interface
-    - [ ] interactQ 테이즈 스킬 구현
+    - [x] IBio interface
+    - [x] interactQ 테이즈 스킬 구현
 
 3. Interact Q 상호작용 추가 구현
-세부내용 : Interact Q의 상호작용 우선순위 부여
-    - [ ] 우선순위 메카니즘 구현
+세부내용 : Interact Q의 상호작용 우선순위 부여, 테이즈 스킬 조건 추가
+    - [x] 우선순위 메카니즘 구현
+    - [x] 테이즈 스킬 조건 추가
     
+4. IElectricity - elecPoint 전기 흡수 메카니즘
+세부내용 : IElectricity interface 제작과 그에 따른 InteractE 흡수 메카니즘
+    - [x] IElectricity interface 제작
+    - [x] Interact E  흡수 메카니즘 구현
+
+5. IElectricity - ElecPoint GameObject 흡수 Effect
+세부내용 : ElecPoint GameObject 흡수 Effect구현
+    - [x] ElecPoint GameObject 제작
+    - [x] Interact E를 통한 흡수 Effect 구현(FadeOut)
     
-5. IElectricity - elecPoint 전기 흡수 메카니즘
-6. IElectricity 흡수 fadeOut Effect
-7. 테이즈 시스템 조건 추가
-8. 데이터베이스 싱글톤 구축  
-9. 엑셀 데이터 로더와 데이터베이스 연동
+6. 데이터베이스 구축  
+세부내용 : 싱글톤을 이용하여 데이터베이스 구축
+    - [x] 싱글톤 데이터 베이스 구축
+    
+7. 엑셀 데이터 로더와 데이터베이스 연동
+세부내용 : 엑셀 데이터 로더를 통해 SkillDataTable 데이터를 스크립터블 오브젝트로 크롤링하여 데이터베이스와 연동
+    - [x] 데이터베이스와 크롤링 스크립터블 오브젝트 연동
 
 ### 3주차(3.30. ~ 4.5.)
 1. 플레이어 상호작용 범위 개선
