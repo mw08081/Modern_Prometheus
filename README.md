@@ -91,9 +91,9 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 3. 금속 객체와의 상호작용 구현  
 세부내용 : Metal 전기 전이 구현  
 ㄴ사전작업 : IMove, Interact F
+    - [ ] Metal 전기전이 메카니즘 구현
     - [ ] IMove Interface 구현
     - [ ] Interact F 구현
-    - [ ] Metal 전기전이 메카니즘 구현
     - [ ] 오브젝트 이동 시, 오브젝트 포인트 재계산 메카니즘 구현
 
 4. 상호작용 업그레이드  
