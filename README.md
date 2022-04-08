@@ -99,6 +99,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 종류별 전기 프리팹 제작
     - [x] 방향별 전기 프리팹 연동
     - [ ] 대각전기 전이 버그 수정
+    - [ ] Y프레임 파이프 전기 전이 버그 수정
     - [x] 플레이어 직접전이는 isTransited를 검사하지 않는 버그 수정
     - [ ] ~~IMove Interface 구현~~
     - [ ] ~~Interact F 구현~~
