@@ -83,6 +83,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 물 객체 위에서의 물 객체와의 상호작용 불가 메카니즘 구현
     - [ ] 중첩전기의 lifeTime 증가 구현  
     - [x] 플레이어 직접전이는 isTransited를 검사하지 않는 버그 수정
+    - [ ] isTransitedClear Method 버그 수정
 
 2. 물 객체와의 상호작용 테스트  
 세부내용 : 다양한 예시를 통한 물 객체 전기전이 테스트  
@@ -101,6 +102,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [ ] 대각전기 전이 버그 수정
     - [x] Y프레임 파이프 전기 전이 버그 수정
     - [x] 플레이어 직접전이는 isTransited를 검사하지 않는 버그 수정
+    - [ ] isTransitedClear Method 버그 수정
     - [ ] ~~IMove Interface 구현~~
     - [ ] ~~Interact F 구현~~
     - [ ] ~~오브젝트 이동 시, 오브젝트 포인트 재계산 메카니즘 구현~~
