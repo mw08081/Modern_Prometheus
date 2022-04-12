@@ -83,7 +83,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 물 객체 위에서의 물 객체와의 상호작용 불가 메카니즘 구현
     - [ ] 중첩전기의 lifeTime 증가 구현  
     - [x] 플레이어 직접전이는 isTransited를 검사하지 않는 버그 수정
-    - [ ] isTransitedClear Method 버그 수정
+    - [x] isTransitedClear Method 버그 수정
 
 2. 물 객체와의 상호작용 테스트  
 세부내용 : 다양한 예시를 통한 물 객체 전기전이 테스트  
@@ -145,6 +145,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
 ### 다음 주차 가이드라인
 - [ ] 전기 흡수 메카니즘 개선 : 중앙지점에서의 흡수
+- [ ] Water lifeTime 증가 매카니즘 구현
+- [ ] Water isTransited 체크 메카니즘 개선
 
 ### 개발방향 가이드라인
 - [ ] Water 구간제외 개발 후 확장성과 공통점에 따른 상속 구현  
