@@ -148,6 +148,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 - 전기 흡수 메카니즘 개선 : 중앙지점에서의 흡수
 - Water lifeTime 증가 매카니즘 구현
 - 플레이어 이동속도 상이함 개선
+- isTransited clear Method 메카니즘 변경
 
 ### 개발방향 가이드라인
 - Water 구간제외 개발 후 확장성과 공통점에 따른 상속 구현  
