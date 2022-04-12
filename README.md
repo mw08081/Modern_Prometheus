@@ -142,3 +142,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [ ] DataBase 연동
 
 ### 5주차
+
+### 개발방향을 위한 가이드
+1. Metal과 Water의 메소드 중복
+    - [ ] Water 구간제외 개발 후 확장성과 공통점에 따른 상속 구현
