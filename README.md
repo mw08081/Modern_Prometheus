@@ -145,9 +145,9 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [ ] 실행 pc에 따른 이동속도 버그 수정
 
 ### 다음 주차 가이드라인
-- Water lifeTime 증가 매카니즘 구현
+- Water lifeTime 증가 매카니즘 구현 
 - 플레이어 이동속도 상이함 개선
-- isTransited clear Method 메카니즘 변경
+- isTransited clear Method 메카니즘 변경 : 흡수했을 경우 전기 전이 불가(기준 : 생성시간 > 오브젝트의 포인트 위에 전기가 여부)
 
 ### 개발방향 가이드라인
 - Water 구간제외 개발 후 확장성과 공통점에 따른 상속 구현  
