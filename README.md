@@ -135,11 +135,11 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     
 4. 스킬 클래스 생성
 세부 내용 : 스킬 실행에 관여할 스킬 클래스 제작
-    - [ ] 
+    - [ ] 스킬 클래스 생성(픽락, 천둥)
     
 5. 픽락   
 세부내용 : 상호작용 PickLock 스킬 구현  
-ㄴ사전작업 : IOpen, SkillClass
+ㄴ사전작업 : IOpen
     - [ ] IOpen interface 구현  
     - [ ] PickLock Debug 연출 구현  
     - [ ] ~~열쇠시스템~~  
