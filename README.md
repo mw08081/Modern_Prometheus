@@ -182,3 +182,4 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     
 - 카메라 팔로우
 - 자동저장, 체크포인트, 세이브포인트
+- interact Q keyHoldCycle UI
