@@ -34,7 +34,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 3. Interact Q 상호작용 추가 구현  
 세부내용 : Interact Q의 상호작용 우선순위 부여, 테이즈 스킬 조건 추가
     - [x] 우선순위 메카니즘 구현
-    - [ ] 테이즈 스킬 조건 추가
+    - [x] 테이즈 스킬 조건 추가
     
 4. IElectricity - elecPoint 전기 흡수 메카니즘  
 세부내용 : IElectricity interface 제작과 그에 따른 InteractE 흡수 메카니즘
