@@ -190,7 +190,6 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 6. 픽락  
 세부내용 : 상호작용 PickLock 스킬 구현    
     - [x] PickLock Debug 연출 구현  
-    - [ ] skill Effect 적용 
 
 7. 전이 사이클 UI  
 세부내용 : 인게임에 전이 사이클 수 표시  
