@@ -161,7 +161,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 실패 이펙트 확정
     - [x] 전이 이펙트 확정
     - [x] 테이저 이펙트 확정
-    - [x] 픽락 이펙트 확정
+    - [ ] 픽락 이펙트 확정
     - [x] 마비 이펙트 확정
     - [ ] 천둥 이펙트 확정
 
@@ -181,11 +181,11 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     
 4. 열쇠 오브젝트
 세부내용 : IObtain Interface - key Item 구현
-    - [ ] IObtain Interface - key Item 구현
+    - [x] IObtain Interface - key Item 구현
     
 5. 문과 열쇠 상호작용
 세부내용 : 열쇠를 통한 문 잠금 해제
-    - [ ] 잠금해제
+    - [x] 잠금해제
 
 6. 픽락  
 세부내용 : 상호작용 PickLock 스킬 구현    
