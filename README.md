@@ -205,7 +205,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     
 2. PlayerCenterPos 변수 전격 변경  
 세부 내용 : 함수의 매개변수로 전달되던 playerCenterPos를 구현된 GameManager.Instance.Player.PlayerCenterPos로 변경하기
-    - [ ] 변경
+    - [x] 변경
     
 3. 스킬 이펙트 결정   
 세부내용 : 기획자회의를 통한 이펙트 선정  
@@ -239,7 +239,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 9. IDamage 인터페이스 업데이트
 세부내용 : 넉백, 체력감소 구현
     - [ ] 넉백
-    - [ ] 체력감소
+    - [x] 체력감소
 
 ### 다음 주차 가이드라인
 
