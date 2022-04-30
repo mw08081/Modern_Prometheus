@@ -273,20 +273,14 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 - Water 구간제외 개발 후 물 lifeTime 메카니즘 구현
 - Water 구간제외 개발 후 물에서의 전기 흡수 메카니즘 개선
 - 대각전기 전이 버그 수정   
+
 - 썬더  
 세부내용 : RMB 스킬 썬더 스킬 추가 구현  
 ㄴ사전작업 : DATA_SKILLRANGE_TABLE DataBase 연동, ScriptableObject 생성  
     - [ ] EXCEL 연동
     - [ ] Scriptable Object 생성
     - [ ] DataBase 연동
-    
-- 벽 오브젝트 소팅  
-세부내용 : 벽과 플레이어의 오브젝트 소팅  
-    - [x] 개발 회의를 통한 기획진 설정
-    - [x] 1/2유닛 벽 확인
-    - [x] 벽 제작
-    - [ ] 오브젝트 소팅 메카니즘 구현
-    
+
 - 스킬 이펙트 결정   
 세부내용 : 기획자회의를 통한 이펙트 선정  
     - [ ] 천둥 이펙트 확정
