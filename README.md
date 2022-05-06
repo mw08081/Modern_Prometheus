@@ -311,3 +311,11 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 - 스킬 이팩트 적용    
 세부내용 : 회의를 통해 결정된 이펙트 적용
     - [ ] 천둥 이펙트 적용
+
+### 기억에 남는 작업
+- 프로파일링 - 리지드바디, 콜라이더. 바디타입  
+- 파이프라인 따라 전기 생성  
+- FixedUpdate, update  
+　  
+- System.Enum.GetValue(typeof(EnumName)).Length  
+- gameObject.trasnform.childCount  
