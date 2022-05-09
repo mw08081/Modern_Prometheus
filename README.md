@@ -333,8 +333,15 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
 ### 기억에 남는 작업
 - 프로파일링 - 리지드바디, 콜라이더. 바디타입  
-- 파이프라인 따라 전기 생성  
+- Async, Await를 이용한 비동기 함수로드  
+　  
 - FixedUpdate, update  
 　  
+- 파이프라인 따라 전기 생성  
+
+### 새로운 개념
 - System.Enum.GetValue(typeof(EnumName)).Length  
 - gameObject.trasnform.childCount  
+- scripting API - https://docs.unity3d.com/ScriptReference
+    - SortingOrder : using UnityEngine.Rendering
+    - Tilemap : using UnityEngine.Tilemap
