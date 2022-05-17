@@ -1,6 +1,28 @@
 # Modern_Prometheus
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
+### 10주차(5.18. ~ 5.24.)
+1. Steal Key  
+세부내용 : Make Stealable Key
+    - [x] Steal Key 구현
+
+2. 데이터 동기 로드  
+세부내용 : 기반 / 엑셀 → 스킬 → FadeInEffect
+    - [ ] 동기 로드 구현
+
+3. UI 개선  
+세부내용 : 몇 가지 UI를 개선
+    - [x] INGAME PANEL : HP, ELELC BAR UI 개선
+    - [ ] 그림자 적용
+    - [ ] TITLE SCENE의 전기 이펙트 판넬에 가려지게끔 적용
+
+4. 버그 관리  
+세부내용 : 방역업체 컨텍
+    - [ ] 전력부여 UI Cancel 버그
+    - [x] 문 애니메이션 버그
+    - [ ] 스테이지 RELoad 시, 쿨타임 초기화(직전사용) - ONlY UI? / SYSTEM ERRROR?
+    - [ ] 픽락 불가능한 상황에서 픽락 UI ACTIVE
+
 ### 9주차(5.11. ~ 5.17.)
 1. INGAME 데이터 관리    
 세부내용 : 인게임 데이터 관리
