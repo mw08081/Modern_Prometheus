@@ -22,6 +22,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 문 애니메이션 버그
     - [ ] 스테이지 RELoad 시, 쿨타임 초기화(직전사용) - ONlY UI? / SYSTEM ERRROR?
     - [ ] 픽락 불가능한 상황에서 픽락 UI ACTIVE
+    - [ ] UnLock comment 가운데 정렬
 
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
