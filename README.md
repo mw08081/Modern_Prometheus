@@ -15,7 +15,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] INGAME PANEL : HP, ELELC BAR UI 개선
     - [ ] 그림자 적용
     - [ ] TITLE SCENE의 전기 이펙트 판넬에 가려지게끔 적용
-    - [ ] 없는 대상에 대해서 UI INACTIVE 적용
+    - [x] 없는 대상에 대해서 UI INACTIVE 적용
 
 4. 버그 관리  
 세부내용 : 방역업체 컨텍
