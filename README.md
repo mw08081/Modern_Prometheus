@@ -14,7 +14,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 세부내용 : 몇 가지 UI를 개선
     - [x] INGAME PANEL : HP, ELELC BAR UI 개선
     - [ ] 그림자 적용
-    - [ ] TITLE SCENE의 전기 이펙트 판넬에 가려지게끔 적용
+    - [x] TITLE SCENE의 전기 이펙트 판넬에 가려지게끔 적용
     - [x] 없는 대상에 대해서 UI INACTIVE 적용
 
 4. 버그 관리  
@@ -22,7 +22,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [ ] 전력부여 UI Cancel 버그
     - [x] 문 애니메이션 버그
     - [ ] 스테이지 RELoad 시, 쿨타임 초기화(직전사용) - ONlY UI? / SYSTEM ERRROR?
-    - [ ] 픽락 불가능한 상황에서 픽락 UI ACTIVE
+    - [ ] 픽락 deep condition에 따른 UI ACTIVE
+    - [ ] 테이저 deep condition에 따른 UI ACTIVE
     - [x] UnLock comment 가운데 정렬
 
 ### 1주차(3.16. ~ 3.22.)
