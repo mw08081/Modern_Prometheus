@@ -19,7 +19,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
 4. 버그 관리  
 세부내용 : 방역업체 컨텍
-    - [ ] 전력부여 UI Cancel 버그
+    - [x] 전력부여 UI Cancel 버그
     - [x] 문 애니메이션 버그
     - [ ] 스테이지 RELoad 시, 쿨타임 초기화(직전사용) - ONlY UI? / SYSTEM ERRROR?
     - [x] 픽락 deep condition에 따른 UI ACTIVE
