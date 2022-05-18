@@ -13,7 +13,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 3. UI 개선  
 세부내용 : 몇 가지 UI를 개선
     - [x] INGAME PANEL : HP, ELELC BAR UI 개선
-    - [ ] 그림자 적용
+    - [x] 그림자 적용
     - [x] TITLE SCENE의 전기 이펙트 판넬에 가려지게끔 적용
     - [x] 없는 대상에 대해서 UI INACTIVE 적용
 
