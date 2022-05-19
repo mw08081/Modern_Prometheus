@@ -17,7 +17,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] TITLE SCENE의 전기 이펙트 판넬에 가려지게끔 적용
     - [x] 없는 대상에 대해서 UI INACTIVE 적용
     - [x] ST0, ST1 Scene Manage Button 구현
-    - [ ] F Interaction available UI
+    - [x] F Interaction available UI
 
 4. 전류 충전 배터리 제작  
 세부내용 : 전류 흡수용 배터리 제작
@@ -32,6 +32,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 픽락 deep condition에 따른 UI ACTIVE
     - [x] 테이저 deep condition에 따른 UI ACTIVE
     - [x] UnLock comment 가운데 정렬
+    - [ ] 개구리야 그만 울어라 나도 울고싶다
+    - [ ] 우리 문이 왜그럴까?
 
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
