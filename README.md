@@ -8,7 +8,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
 2. 데이터 동기 로드  
 세부내용 : 기반 / 엑셀 → 스킬 → FadeInEffect
-    - [ ] 동기 로드 구현
+    - [x] 동기 로드 구현
 
 3. UI 개선  
 세부내용 : 몇 가지 UI를 개선
@@ -17,8 +17,14 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] TITLE SCENE의 전기 이펙트 판넬에 가려지게끔 적용
     - [x] 없는 대상에 대해서 UI INACTIVE 적용
     - [x] ST0, ST1 Scene Manage Button 구현
+    - [ ] F Interaction available UI
 
-4. 버그 관리  
+4. 전류 충전 배터리 제작  
+세부내용 : 전류 흡수용 배터리 제작
+    - [ ] 배터리 제작
+    - [ ] 리소스 적용
+
+5. 버그 관리  
 세부내용 : 방역업체 컨텍
     - [x] 전력부여 UI Cancel 버그
     - [x] 문 애니메이션 버그
