@@ -27,13 +27,11 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 5. 버그 관리  
 세부내용 : 방역업체 컨텍
     - [x] 전력부여 UI Cancel 버그
-    - [x] 문 애니메이션 버그
-    - [ ] 스테이지 RELoad 시, 쿨타임 초기화(직전사용) - ONlY UI? / SYSTEM ERRROR?
     - [x] 픽락 deep condition에 따른 UI ACTIVE
     - [x] 테이저 deep condition에 따른 UI ACTIVE
     - [x] UnLock comment 가운데 정렬
-    - [ ] 개구리야 그만 울어라 나도 울고싶다
-    - [ ] 우리 문이 왜그럴까?
+    - [x] 개구리야 그만 울어라 나도 울고싶다
+    - [x] 우리 문이 왜그럴까?
 
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
