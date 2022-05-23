@@ -1,37 +1,7 @@
 # Modern_Prometheus
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
-### 10주차(5.18. ~ 5.24.)
-1. Steal Key  
-세부내용 : Make Stealable Key
-    - [x] Steal Key 구현
 
-2. 데이터 동기 로드  
-세부내용 : 기반 / 엑셀 → 스킬 → FadeInEffect
-    - [x] 동기 로드 구현
-
-3. UI 개선  
-세부내용 : 몇 가지 UI를 개선
-    - [x] INGAME PANEL : HP, ELELC BAR UI 개선
-    - [x] 그림자 적용
-    - [x] TITLE SCENE의 전기 이펙트 판넬에 가려지게끔 적용
-    - [x] 없는 대상에 대해서 UI INACTIVE 적용
-    - [x] ST0, ST1 Scene Manage Button 구현
-    - [x] F Interaction available UI
-
-4. 전류 충전 배터리 제작  
-세부내용 : 전류 흡수용 배터리 제작
-    - [x] 배터리 제작
-    - [x] 리소스 적용
-
-5. 버그 관리  
-세부내용 : 방역업체 컨텍
-    - [x] 전력부여 UI Cancel 버그
-    - [x] 픽락 deep condition에 따른 UI ACTIVE
-    - [x] 테이저 deep condition에 따른 UI ACTIVE
-    - [x] UnLock comment 가운데 정렬
-    - [x] 개구리야 그만 울어라 나도 울고싶다
-    - [x] 우리 문이 왜그럴까?
 
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
@@ -383,6 +353,38 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 8. 애너미 상태 초기화  
 세부내용 : 임시 방편으로? 데이터 저장없이 에너미 상태 초기화
     - [x] 씬 재로드에 따른 에너미 상태 초기화
+    
+### 10주차(5.18. ~ 5.24.)
+1. Steal Key  
+세부내용 : Make Stealable Key
+    - [x] Steal Key 구현
+
+2. 데이터 동기 로드  
+세부내용 : 기반 / 엑셀 → 스킬 → FadeInEffect
+    - [x] 동기 로드 구현
+
+3. UI 개선  
+세부내용 : 몇 가지 UI를 개선
+    - [x] INGAME PANEL : HP, ELELC BAR UI 개선
+    - [x] 그림자 적용
+    - [x] TITLE SCENE의 전기 이펙트 판넬에 가려지게끔 적용
+    - [x] 없는 대상에 대해서 UI INACTIVE 적용
+    - [x] ST0, ST1 Scene Manage Button 구현
+    - [x] F Interaction available UI
+
+4. 전류 충전 배터리 제작  
+세부내용 : 전류 흡수용 배터리 제작
+    - [x] 배터리 제작
+    - [x] 리소스 적용
+
+5. 버그 관리  
+세부내용 : 방역업체 컨텍
+    - [x] 전력부여 UI Cancel 버그
+    - [x] 픽락 deep condition에 따른 UI ACTIVE
+    - [x] 테이저 deep condition에 따른 UI ACTIVE
+    - [x] UnLock comment 가운데 정렬
+    - [x] 개구리야 그만 울어라 나도 울고싶다
+    - [x] 우리 문이 왜그럴까?
 
 ### 다음 주차 가이드라인
 
@@ -390,37 +392,20 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 - Water 구간제외 개발 후 확장성과 공통점에 따른 상속 구현  
 - Water 구간제외 개발 후 물 lifeTime 메카니즘 구현
 - Water 구간제외 개발 후 물에서의 전기 흡수 메카니즘 개선
+
 - 대각전기 전이 버그 수정   
+- fadeIn Effect 중에 옵션 페널이 실행되면 클릭이 불가한 점
 
 - 밝기조정  
 - 해상도조정  
+- 천둥 : 천둥
 
-- 천둥   
-세부내용 : 기능 구현을 통한 초안 구현  
-    - [ ] 초안
-    - [ ] 소음 시스템
-
-- 썬더  
-세부내용 : RMB 스킬 썬더 스킬 추가 구현  
-ㄴ사전작업 : DATA_SKILLRANGE_TABLE DataBase 연동, ScriptableObject 생성  
-    - [ ] EXCEL 연동
-    - [ ] Scriptable Object 생성
-    - [ ] DataBase 연동
-
-- 스킬 이펙트 결정   
-세부내용 : 기획자회의를 통한 이펙트 선정  
-    - [ ] 천둥 이펙트 확정
-
-- 스킬 이팩트 적용    
-세부내용 : 회의를 통해 결정된 이펙트 적용
-    - [ ] 천둥 이펙트 적용
 
 ### 기억에 남는 작업
 - 프로파일링 - 리지드바디, 콜라이더. 바디타입  
 - Async, Await를 이용한 비동기 함수로드  
-　  
+- coroutine that in coroutine 을 통한 데이터 동기 로드
 - FixedUpdate, update  
-　  
 - 파이프라인 따라 전기 생성  
 
 ### 새로운 개념
