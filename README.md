@@ -18,14 +18,14 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 4. 최적화
 세부내용 : 최적화에 대한 내용 정리 + 빈 이벤트 함수 제거, InVoke() → Coroutine()
     - [x] 최적화 카드 생성
-    - [ ] Resources 폴더 최적화
-    - [ ] #define 최적화
-    - [ ] 하이어라키 최적화
+    - [x] Resources 폴더 최적화
+    - [x] #define 최적화
+    - [x] 하이어라키 최적화
     
 5. 물 orig Point Auto Setting
 세부내용 : 자동 좌표설정과 프리팹화
-    - [ ] Orig Point Auto Setting
-    - [ ] 프리팹 생성
+    - [ ] ~~Orig Point Auto Setting~~
+    - [ ] ~~프리팹 생성~~
     
 6. 버그픽스
 세부내용 : 꾸준하게 버그를 리포트하고 수정
