@@ -446,10 +446,11 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
 ### 기억에 남는 작업
 - 프로파일링 - 리지드바디, 콜라이더. 바디타입  
-- Async, Await를 이용한 비동기 함수로드  
 - coroutine that in coroutine 을 통한 데이터 동기 로드
-- FixedUpdate, update  
+- Player FOV Expansion
 - 파이프라인 따라 전기 생성  
+
+- Async, Await를 이용한 비동기 함수로드 
 
 ### 새로운 개념
 - System.Enum.GetValue(typeof(EnumName)).Length  
