@@ -13,38 +13,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
 문 범위 확장, 
 
-### 11주차(5.25. ~ 5.31.)
-1. E스킬 병합  
-세부내용 : E스킬(Drain) → Q스킬 계열로 로직, 키 병합
-    - [x] 병합
 
-2. UI 자동화  
-세부내용 : UI 자동화에 대한 공부
-    - [x] UI Object Auto Bind
-    - [x] Function Auto Bind to Button UI Object
-    
-3. 체크포인트 로직 수정  
-세부내용 : 순차 트리거 → Bigger 트리거
-    - [x] 로직 수정
-    
-4. 최적화  
-세부내용 : 최적화에 대한 내용 정리 + 빈 이벤트 함수 제거, InVoke() → Coroutine()
-    - [x] 최적화 카드 생성
-    - [x] Resources 폴더 최적화
-    - [x] #define 최적화
-    - [x] 하이어라키 최적화
-    
-5. 물 orig Point Auto Setting  
-세부내용 : 자동 좌표설정과 프리팹화
-    - [ ] ~~Orig Point Auto Setting~~
-    - [ ] ~~프리팹 생성~~
-    
-6. 버그픽스  
-세부내용 : 꾸준하게 버그를 리포트하고 수정
-    - [x] 씬 로드 때, 문 애니메이션 소리 재생 수정
-    - [x] 씬 로드 때, 트리거 코멘트 출력 수정
-    - [x] 씬 로드 때, 플레이어 이동가능 수정
-    - [x] 문 세이브 데이터 읽기 
 
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
@@ -428,6 +397,39 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] UnLock comment 가운데 정렬
     - [x] 개구리야 그만 울어라 나도 울고싶다
     - [x] 우리 문이 왜그럴까?
+    
+### 11주차(5.25. ~ 5.31.)
+1. E스킬 병합  
+세부내용 : E스킬(Drain) → Q스킬 계열로 로직, 키 병합
+    - [x] 병합
+
+2. UI 자동화  
+세부내용 : UI 자동화에 대한 공부
+    - [x] UI Object Auto Bind
+    - [x] Function Auto Bind to Button UI Object
+    
+3. 체크포인트 로직 수정  
+세부내용 : 순차 트리거 → Bigger 트리거
+    - [x] 로직 수정
+    
+4. 최적화  
+세부내용 : 최적화에 대한 내용 정리 + 빈 이벤트 함수 제거, InVoke() → Coroutine()
+    - [x] 최적화 카드 생성
+    - [x] Resources 폴더 최적화
+    - [x] #define 최적화
+    - [x] 하이어라키 최적화
+    
+5. 물 orig Point Auto Setting  
+세부내용 : 자동 좌표설정과 프리팹화
+    - [ ] ~~Orig Point Auto Setting~~
+    - [ ] ~~프리팹 생성~~
+    
+6. 버그픽스  
+세부내용 : 꾸준하게 버그를 리포트하고 수정
+    - [x] 씬 로드 때, 문 애니메이션 소리 재생 수정
+    - [x] 씬 로드 때, 트리거 코멘트 출력 수정
+    - [x] 씬 로드 때, 플레이어 이동가능 수정
+    - [x] 문 세이브 데이터 읽기 
 
 ### 다음 주차 가이드라인
 
@@ -447,9 +449,10 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 ### 기억에 남는 작업
 - 프로파일링 - 리지드바디, 콜라이더. 바디타입  
 - coroutine that in coroutine 을 통한 데이터 동기 로드
+- Optimazing
 - Player FOV Expansion
 - 파이프라인 따라 전기 생성  
-
+　  
 - Async, Await를 이용한 비동기 함수로드 
 
 ### 새로운 개념
