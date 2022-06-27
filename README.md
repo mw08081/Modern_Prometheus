@@ -15,6 +15,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 세부내용 : 색상, 폰트 스타일 적용 방법 구현
     - [x] 고정색과 헥사코드 색상 적용 구현
     - [x] 볼드체와 이태릭채 적용 구현
+    <img width="440" alt="StringReference N DynamicTextFont" src="https://user-images.githubusercontent.com/58582985/175847834-69d94fc4-0de4-48f9-a652-a3785034919a.png">
 
 
 
