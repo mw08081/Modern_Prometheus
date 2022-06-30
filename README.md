@@ -1,6 +1,13 @@
 # Modern_Prometheus 
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
+### 16주차(6.29. ~ 7.5.)
+1. 구글 데이터 시트 연동  
+세부내용 : 구글 데이터 시트 연동
+    - [ ] 연동
+    
+2. Auto UI 제작
+
 ### 15주차(6.22. ~ 6.28.)
 1. 스킬 테이블 연동  
 세부내용 : 스킬테이블의 참조변수 필드 추가 연동
@@ -16,9 +23,6 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 고정색과 헥사코드 색상 적용 구현
     - [x] 볼드체와 이태릭채 적용 구현
     <img width="440" alt="StringReference N DynamicTextFont" src="https://user-images.githubusercontent.com/58582985/175847834-69d94fc4-0de4-48f9-a652-a3785034919a.png">
-
-
-
 
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
