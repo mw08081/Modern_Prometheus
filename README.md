@@ -29,6 +29,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 세부내용 : 기타 작업 및 버그 수정
     - [ ] 에너미 피벗 포인트 변경에 따른 에너미 마비이펙트 생성 위치
     - [ ] waterElec lifeTime 증가에 따른 전기플로우 사운드 off 매카니즘 변경
+    - [ ] st0, soundGenerator 전력 60/70에 따른 행동 이상 현상
     - [x] soundGenerator device소속으로 편입
 
 ### 1주차(3.16. ~ 3.22.)
