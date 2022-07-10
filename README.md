@@ -557,7 +557,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - https://dallcom-forever2620.tistory.com/18
     
 - Get Vector using angle(need to adjust Quaternion's(x,y,z) & StdVector)
-    - https://wiseraintown.tistory.com/entry/Transform-%EA%B0%81%EB%8F%84%EC%97%90-%EB%94%B0%EB%A5%B8-Object-%EB%B0%A9%ED%96%A5-%EA%B5%AC%ED%95%98%EA%B8%B0 - 
-    
+    - https://wiseraintown.tistory.com/entry/Transform-%EA%B0%81%EB%8F%84%EC%97%90-%EB%94%B0%EB%A5%B8-Object-%EB%B0%A9%ED%96%A5-%EA%B5%AC%ED%95%98%EA%B8%B0
+- Create Unity Editor custom Button to execute some Function
+    - https://wergia.tistory.com/165
 - LineRenederer
     -
