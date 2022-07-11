@@ -565,4 +565,4 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 - Create Unity Editor custom Button to execute some Function
     - https://wergia.tistory.com/165
 - LineRenederer
-    -
+    - https://beatchoi.github.io/unity3d/basics/2020/12/14/LineRenderer2/
