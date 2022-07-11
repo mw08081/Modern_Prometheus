@@ -547,6 +547,9 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 - 파이프라인 따라 전기 생성  
 - Line Renederer
 
+### 웃픈..
+- cos()안에 계속 deg 값을 적용..  * Mathf.Deg2Rad
+
 ### 새로운 개념
 - System.Enum.GetValue(typeof(EnumName)).Length  
 - gameObject.trasnform.childCount  
