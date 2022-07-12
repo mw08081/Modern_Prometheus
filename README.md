@@ -1,7 +1,7 @@
 # Modern_Prometheus 
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
-### 17주차(7.6. ~ 7.12.)
+### 17, 18주차(7.6. ~ 7.19.)
 1. 목표전기 전이(Elec TargetTransit)  
 세부내용 : 목표전기 전이 구현
     - [x] 목표전기 전이 메카니즘 구현
