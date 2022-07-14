@@ -21,15 +21,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] F상호작용 토글 장치 구현
     - [x] 전력원에 따른 장치 구현
     - [x] 전력원 장치 인스펙터 자동화 
-    - [ ] 전력원 장치 회로 자동 연결 메카니즘 구현
-        - [x] 비장애 직선
-        - [x] 비장애 대각선
-        - [ ] 장애 우회 경로
-    - [x] 전력원 장치 회로 끊김포인트 생성 메카니즘 구현
-    - [ ] 끊김 구간에 따른 장치회로 자동 연결 메카니즘 구현
-        - [ ] 비장애 직선
-        - [ ] 비장애 대각선
-        - [ ] 장애 우회 경로
+    - [ ] 전력원 장치 회로 구현 메카니즘
     - [ ] 전력원 특성에 따른 구현
     - [ ] ~~다양한 장치 구현~~
     
@@ -571,5 +563,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - https://wiseraintown.tistory.com/entry/Transform-%EA%B0%81%EB%8F%84%EC%97%90-%EB%94%B0%EB%A5%B8-Object-%EB%B0%A9%ED%96%A5-%EA%B5%AC%ED%95%98%EA%B8%B0
 - Create Unity Editor custom Button to execute some Function
     - https://wergia.tistory.com/165
+- Event on Editor & Get WorldPosition using Event.mousePosition
+    - https://answers.unity.com/questions/381630/listen-for-a-key-in-edit-mode.html
+    - https://answers.unity.com/questions/877467/how-to-get-mouse-position-in-world-space-when-in-e.html
 - LineRenederer
     - https://beatchoi.github.io/unity3d/basics/2020/12/14/LineRenderer2/
