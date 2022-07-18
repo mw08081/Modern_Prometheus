@@ -570,3 +570,9 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - https://answers.unity.com/questions/877467/how-to-get-mouse-position-in-world-space-when-in-e.html
 - LineRenederer
     - https://beatchoi.github.io/unity3d/basics/2020/12/14/LineRenderer2/
+    
+- How to save variable in custom editor in unity
+    - https://postpiglet.netlify.app/posts/unity-prefabscenemark/
+    - https://forum.unity.com/threads/custom-editor-variables-not-saving.513406/
+    - https://stackoverflow.com/questions/61238628/cannot-save-a-variable-of-a-editor-script
+    - https://assetstore.unity.com/packages/tools/utilities/play-mode-save-177452
