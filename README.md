@@ -30,7 +30,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 4. 기타 작업  
 세부내용 : 기타 작업 및 버그 수정
     - [x] 에너미 피벗 포인트 변경에 따른 에너미 마비이펙트 생성 위치
-    - [ ] waterElec lifeTime 증가에 따른 전기플로우 사운드 off 매카니즘 변경
+    - [x] elec Flow Sound Stop Mechanism on water
+    - [ ] elec Flow Sound Stop Mechanism on metal
     - [x] Elec Trig Device Toggle off Mechanism
     - [x] soundGenerator device소속으로 편입
 
