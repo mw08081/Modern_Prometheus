@@ -1,35 +1,9 @@
 # Modern_Prometheus 
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
-### 17, 18주차(7.6. ~ 7.19.)
-1. 목표전기 전이(Elec TargetTransit)  
-세부내용 : 목표전기 전이 구현
-    - [x] 목표전기 전이 메카니즘 구현
-    - [x] 전기 전이 중 버그(잔여 전기량과 관련없이 끊어짐)
-    - [x] 목표 트리거 이후 전기 고착 메카니즘 구현 - 물
     - [ ] ~~목표 트리거 이후 전기 고착 메카니즘 구현 - 파이프~~(19주차 예정 : 개발자 회의 이후)
-    
- 2. 목표전기 전이 업그레이드  
- 세부내용 : 목표전기 전이 업그레이드
-    - [x] 멀티 장치 전기전이 메카니즘(최단 거리 장치 트리거)
+    - [ ] 물에서의 전기프리팹 변경(전력원과 장치간의 목표전기 전이)(19주차 예정 : 개발자 회의 이후)
     - [ ] 복합 전도체 위의 장치 목표전기 전이(물 → 파이프) 
-    - [ ] ~~전력원과 장치간의 목표전기 전이~~(19주차 예정 : 개발자 회의 이후)
-
-3. 전력원과 장치  
-세부내용 : 장치 구현
-    - [x] F상호작용 토글 장치 구현
-    - [x] 전력원에 따른 장치 구현
-    - [x] 전력원 장치 인스펙터 자동화 ← 
-    - [x] 전력원 장치 회로 구현 메카니즘 ←
-    - [x] 전기 컨테이너 구현
-    - [ ] ~~다양한 장치 구현~~(19, 20주차 예정)
-    
-4. 기타 작업  
-세부내용 : 기타 작업 및 버그 수정
-    - [x] 에너미 피벗 포인트 변경에 따른 에너미 마비이펙트 생성 위치
-    - [x] elec Flow Sound Stop Mechanism
-    - [x] Elec Trig Device Toggle off Mechanism
-    - [x] soundGenerator device소속으로 편입
 
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
@@ -523,6 +497,33 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 3. UI  
 세부내용 : UI 생성과 자동화
     - [ ] ~~작업보류~~
+    
+### 17, 18주차(7.6. ~ 7.19.)
+1. 목표전기 전이(Elec TargetTransit)  
+세부내용 : 목표전기 전이 구현
+    - [x] 목표전기 전이 메카니즘 구현
+    - [x] 전기 전이 중 버그(잔여 전기량과 관련없이 끊어짐)
+    - [x] 목표 트리거 이후 전기 고착 메카니즘 구현 - 물
+    
+ 2. 목표전기 전이 업그레이드  
+ 세부내용 : 목표전기 전이 업그레이드
+    - [x] 멀티 장치 전기전이 메카니즘(최단 거리 장치 트리거) ← 18
+    
+3. 전력원과 장치  
+세부내용 : 장치 구현
+    - [x] F상호작용 토글 장치 구현
+    - [x] 전력원에 따른 장치 구현
+    - [x] 전력원 장치 인스펙터 자동화 ← 18
+    - [x] 전력원 장치 회로 구현 메카니즘 ← 18
+    - [x] 전기 컨테이너 구현 ← 18
+    
+4. 기타 작업  
+세부내용 : 기타 작업 및 버그 수정  
+    - [x] 에너미 피벗 포인트 변경에 따른 에너미 마비이펙트 생성 위치 ← 18
+    - [x] elec Flow Sound Stop Mechanism ← 18
+    - [x] Elec Trig Device Toggle off Mechanism ← 18
+    - [x] soundGenerator device소속으로 편입
+
 
 ### 다음 주차 가이드라인
 
@@ -557,7 +558,6 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - Tilemap : using UnityEngine.Tilemap
 - RayCast Filltering
     - https://dallcom-forever2620.tistory.com/18
-    
 - Get Vector using angle(need to adjust Quaternion's(x,y,z) & StdVector)
     - https://wiseraintown.tistory.com/entry/Transform-%EA%B0%81%EB%8F%84%EC%97%90-%EB%94%B0%EB%A5%B8-Object-%EB%B0%A9%ED%96%A5-%EA%B5%AC%ED%95%98%EA%B8%B0
 - Create Unity Editor custom Button to execute some Function
@@ -567,7 +567,6 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - https://answers.unity.com/questions/877467/how-to-get-mouse-position-in-world-space-when-in-e.html
 - LineRenederer
     - https://beatchoi.github.io/unity3d/basics/2020/12/14/LineRenderer2/
-    
 - How to save variable in custom editor in unity
     - https://postpiglet.netlify.app/posts/unity-prefabscenemark/
     - https://forum.unity.com/threads/custom-editor-variables-not-saving.513406/
