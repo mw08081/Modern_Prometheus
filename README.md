@@ -21,7 +21,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 전력원에 따른 장치 구현
     - [x] 전력원 장치 인스펙터 자동화 ← 
     - [x] 전력원 장치 회로 구현 메카니즘 ←
-    - [ ] 전력원 특성에 따른 구현
+    - [ ] 컨테이너 특성에 따른 구현
         - [x] Power Container
         - [x] Power Source(include isReChargeable)
         - [ ] Water Container
