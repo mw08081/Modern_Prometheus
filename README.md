@@ -21,10 +21,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 전력원에 따른 장치 구현
     - [x] 전력원 장치 인스펙터 자동화 ← 
     - [x] 전력원 장치 회로 구현 메카니즘 ←
-    - [ ] 컨테이너 특성에 따른 구현
-        - [x] Power Container
-        - [x] Power Source(include isReChargeable)
-        - [ ] Water Container
+    - [x] 전기 컨테이너 구현
     - [ ] ~~다양한 장치 구현~~(19, 20주차 예정)
     
 4. 기타 작업  
