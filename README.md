@@ -586,6 +586,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 - scripting API - https://docs.unity3d.com/ScriptReference
     - SortingOrder : using UnityEngine.Rendering
     - Tilemap : using UnityEngine.Tilemap
+    - Light2D : using UnityEngine.Experimental.Rendering.LWRP
 - RayCast unsing Speific Layer Filltering 
     - https://dallcom-forever2620.tistory.com/18
 - Get Vector using angle(need to adjust Quaternion's(x,y,z) & StdVector)
