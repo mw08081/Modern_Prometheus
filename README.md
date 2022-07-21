@@ -18,7 +18,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 세부내용 : 전력원 관련 업데이트
     - [x] powerSource containAmount Data Save
     - [x] 전력원 전력 부여 제한 메카니즘
-    - [ ] 장치 전력 부여 이펙트
+    - [x] 장치 전력 부여 이펙트
     - [ ] 파워소스 리소스 업데이트
     
 4. 물 전기 프리팹 변경  
