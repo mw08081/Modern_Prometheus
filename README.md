@@ -38,6 +38,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     
 6. UI  
 세부내용 : 에셋을 활용한 UI작업
+    - [x] Input System 변경
     - [ ] UI 자동화
     
 7. 기타  
