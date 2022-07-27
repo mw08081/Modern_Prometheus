@@ -1,6 +1,26 @@
 # Modern_Prometheus 
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
+### 20주차(7.27. ~ 8.2.)
+1. 프리팹  
+세부내용 : 회의 내용 반영
+    - [x] 파이프
+    - [x] 물
+    - [x] 상자
+    - [x] 전력원
+    
+2. 전기전이
+세부내용 : 버그 수정
+    - [x] 타겟 전이 필요량 초과 부여시, 잔가지가 이상한 곳을 튀는 현상
+    
+3. UI
+세부내용 : UI 적용
+    - [x] UI 틀 갖추기
+    - [ ] Title에서 GameStart 연결하기
+    - [ ] stage Clear Panel
+    - [ ] Game Eneding Panel
+    - [ ] Option Panel
+
 ### 19주차(7.20. ~ 7.26.)
 1. 전기변수 조정  
 세부내용 : 전기 특성에 따른 변수 조정
