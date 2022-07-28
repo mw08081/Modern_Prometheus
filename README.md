@@ -16,7 +16,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 3. UI
 세부내용 : UI 적용
     - [x] UI 틀 갖추기
-    - [ ] Title에서 GameStart 연결하기
+    - [x] Title에서 GameStart 연결하기
     - [ ] stage Clear Panel
     - [ ] Game Eneding Panel
     - [ ] Option Panel
