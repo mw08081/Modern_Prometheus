@@ -605,6 +605,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 - Player FOV Expansion
 - 파이프라인 따라 전기 생성  
 - Line Renederer
+- UI 에셋 구매하여 남의 코드를 읽고 맛에 따라 적용
 
 ### 웃픈..
 - cos()안에 계속 deg 값을 적용..  * Mathf.Deg2Rad
