@@ -17,9 +17,14 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 세부내용 : UI 적용
     - [x] UI 틀 갖추기
     - [x] Title에서 GameStart 연결하기
-    - [ ] stage Clear Panel
-    - [ ] Game Eneding Panel
-    - [ ] Option Panel
+    - [x] stage Clear Panel
+    - [x] Game Eneding Panel
+    - [x] Option Panel
+    
+4. etc  
+세부내용 : 등등,,
+    - [x] 벽 뒤 light Can't trigger on Player
+    - [x] Tazer Vector Checker Mechanism 
 
 ### 19주차(7.20. ~ 7.26.)
 1. 전기변수 조정  
