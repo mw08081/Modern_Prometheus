@@ -7,7 +7,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 트리거 전기 흡수 메카니즘(라이프타임 조정)
     - [ ] 전력원과 장치간의 목표전기 전이
     - [ ] 복합 전도체 위의 장치 목표 전이(Water → Pipe)
-    - [ ] 멀티 장치 최단거리 메카니즘 변경(단순 거리 → 최소 이동 거리)
+    - [ ] 멀티 장치 최단거리 메카니즘 변경(단순 거리 → 최소 이동 거리)  
         EX) 10Step device in water vs 5step device on metal liked water
 
 ### 20주차(7.27. ~ 8.2.)
