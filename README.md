@@ -5,7 +5,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 ### 22주차(8.10. ~ 8.16.)
 1. 목표전기 전이
 세부내용 : 목표전기 전이 구체화  
-    - [ ] 전력원과 장치간의 목표전기 전이
+    - [x] 전력원과 장치간의 목표전기 전이
     - [ ] 복합 전도체 위의 장치 목표 전이(Water → Pipe)
     - [ ] 멀티 장치 최단거리 메카니즘 변경(단순 거리 → 최소 이동 거리)  
         EX) 10Step device in water VS 5step device on metal liked water
