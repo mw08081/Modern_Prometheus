@@ -24,7 +24,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 문
     - [x] 문 에니메이션
     - [x] 열쇠
-    - [ ] 자물쇠 FADE OUT
+    - [x] 자물쇠 FADE OUT
     
 5. 상호작용 개선
 세부내용 : 문 잠금 기능 제거
