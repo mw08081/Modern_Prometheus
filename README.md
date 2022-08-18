@@ -17,8 +17,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 4. 문
 세부내용 : 문 기타 수정 사항
     - [x] Full Open sprite 수정
-    - [ ] 에니메이션 이벤트 함수 등록
-    - [ ] lock fade out 시간 조정
+    - [x] 애니메이션 이벤트 함수 등록
+    - [x] lock fade out 시간 조정
 
 5. 기타
 세부내용 : 기타 수정 사항
