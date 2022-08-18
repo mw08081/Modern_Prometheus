@@ -8,7 +8,6 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] 전력원과 장치간의 목표전기 전이 
     - [x] 복합 전도체 위의 장치 목표 전이(Water → Pipe)
     - [x] 멀티 장치 최단거리 메카니즘 변경(단순 거리 → 최소 이동 거리)  
-        EX) 10Step device in water VS 5step device on metal liked water
     
 2. 튜토리얼 최적화  
 세부내용 : 스크립터블 오브젝트를 이용한 튜토리얼 메모리 최적화
