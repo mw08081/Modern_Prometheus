@@ -8,6 +8,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
 2. 체크포인트   
 세부내용 : 체크포인트 상호작용 방식 수정
+    - [x] HeartEngine
+    - [ ] Device
     - [ ] 수정
  
 3. 스킬  
