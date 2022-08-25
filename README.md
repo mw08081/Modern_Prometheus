@@ -8,6 +8,21 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [ ] Device
     - [ ] 수정
 
+2. UI  
+세부내용 : Skill & Player UI
+    - [ ] Skill
+    - [ ] Player State
+    
+3. InGame ReSource  
+세부내용 : 인게임 리소스 적용
+    - [ ] 파이프
+    - [ ] 파워라인
+   
+4. Skill Effect  
+세부내용 : 스킬 이펙트 추가
+    - [ ] 충전
+    - [ ] 흡수
+
 ### 23주차(8.17. ~ 8.23.)
 1. 목표전기 전이  
 세부내용 : 제발 마무리하자..
