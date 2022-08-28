@@ -16,7 +16,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 3. InGame ReSource  
 세부내용 : 인게임 리소스 적용
     - [ ] 파이프
-    - [ ] 파워라인
+    - [x] 파워라인
    
 4. Skill Effect  
 세부내용 : 스킬 이펙트 추가
