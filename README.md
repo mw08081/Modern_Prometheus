@@ -1,8 +1,31 @@
 # Modern_Prometheus 
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
+### 25주차(8.31. ~ 9.6.)
+1. UI  
+세부내용 : 플레이어 ui 변경
+    - [ ] 플레이어 상태
+    - [ ] 스킬
 
+2. 세이브 포인트  
+세부내용 : 추가 설정 변경
+    - [ ] PowerSourceDevice && IsUsable Device 특이점
+    - [ ] spawn Position 수정
+    - [ ] 리스폰 포인트 갱신 comment
+    
+3. 인게임 리소스 적용  
+세부내용 : 리소스 적용
+    - [ ] 심장엔진
+    - [ ] 부활장치
 
+4. 기타  
+세부내용 : 기타사항
+    - [x] 문 버그
+    - [ ] 전기 소팅 버그
+    - [ ] 개구리 흡수 Q 편입
+    - [ ] pipe 2 water 목표전기 전이 버그
+    - [ ] Q charging effect
+    - [ ] Q Drain effect
 
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
