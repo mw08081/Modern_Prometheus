@@ -9,9 +9,9 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
 2. 세이브 포인트  
 세부내용 : 추가 설정 변경
-    - [ ] PowerSourceDevice && IsUsable Device 특이점
+    - [x] PowerSourceDevice && IsUsable Device 특이점
     - [ ] spawn Position 수정
-    - [ ] 리스폰 포인트 갱신 comment
+    - [x] 리스폰 포인트 갱신 comment
     
 3. 인게임 리소스 적용  
 세부내용 : 리소스 적용
