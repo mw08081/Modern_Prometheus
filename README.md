@@ -4,18 +4,18 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 ### 25주차(8.31. ~ 9.6.)
 1. UI  
 세부내용 : 플레이어 ui 변경
-    - [ ] 플레이어 상태
-    - [ ] 스킬
+    - [x] 플레이어 상태
+    - [x] 스킬
 
 2. 세이브 포인트  
 세부내용 : 추가 설정 변경
     - [x] PowerSourceDevice && IsUsable Device 특이점
-    - [ ] spawn Position 수정
+    - [x] spawn Position 수정
     - [x] 리스폰 포인트 갱신 comment
     
 3. 인게임 리소스 적용  
 세부내용 : 리소스 적용
-    - [ ] 심장엔진
+    - [x] 심장엔진
     - [x] 부활장치
 
 4. 기타  
