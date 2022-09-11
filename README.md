@@ -1,6 +1,8 @@
 # Modern_Prometheus 
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
+### 26주차(9.7. ~ 9.12.)
+
 ### 25주차(8.31. ~ 9.6.)
 1. UI  
 세부내용 : 플레이어 ui 변경
