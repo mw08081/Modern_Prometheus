@@ -2,6 +2,21 @@
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
 ### 26주차(9.7. ~ 9.12.)
+1. UI
+세부내용 : skill Description
+    - [x] Hover Tip : Skill Description
+    - [ ] ESC Mechanism
+    - [ ] Can't Hover when on Option
+    
+ 2. 스킬 이펙트 추가  
+ 세부내용 : 스킬 이펙트 추가
+    - [ ] 흡수
+    - [ ] 충전
+    
+3. 기타
+세부내용 : 기타사항
+    - [ ] 개구리 IObtain → IContainer
+    - [ ] 전기 - 파이프 소팅 버그
 
 ### 25주차(8.31. ~ 9.6.)
 1. UI  
@@ -23,11 +38,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 4. 기타  
 세부내용 : 기타사항
     - [x] 문 버그
-    - [ ] 전기 소팅 버그
-    - [ ] 개구리 흡수 Q 편입
-    - [ ] pipe 2 water 목표전기 전이 버그
-    - [ ] Q charging effect
-    - [ ] Q Drain effect
+    - [x] 전기 소팅 버그
 
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
