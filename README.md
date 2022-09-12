@@ -2,8 +2,8 @@
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
 ### 26주차(9.7. ~ 9.12.)
-1. UI
-세부내용 : skill Description
+1. UI  
+세부내용 : skill Description  
     - [x] Hover Tip : Skill Description
     - [ ] ESC Mechanism
     - [ ] Can't Hover when on Option
