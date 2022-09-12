@@ -15,7 +15,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     
 3. 기타
 세부내용 : 기타사항
-    - [ ] 개구리 IObtain → IContainer
+    - [x] 개구리 IObtain → IContainer
     - [ ] 전기 - 파이프 소팅 버그
 
 ### 25주차(8.31. ~ 9.6.)
