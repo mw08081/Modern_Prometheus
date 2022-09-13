@@ -1,48 +1,35 @@
 # Modern_Prometheus 
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
-### 26주차(9.7. ~ 9.12.)
+### 27주차(9.14. ~ 9.20.)
 1. UI  
 세부내용 : skill Description  
-    - [x] Hover Tip : Skill Description
+    - [ ] Hover tip window Design   ←
+    - [ ] Hover Tip window Bug  ←
+    - [ ] Add Skill Name into hoverTip window   ←
     - [ ] ESC Mechanism
     - [ ] Can't Hover when on Option
     
- 2. 스킬 이펙트 추가  
- 세부내용 : 스킬 이펙트 추가
-    - [x] 흡수
-    - [x] 충전
-    - [ ] 팔로잉 이펙트
+2. Skill Effect  
+세부내용 : 스킬 이펙트 점검
+    - [ ] 은폐시 스킬 이펙트 표시 막기  ←
+    - [ ] 새로운 흡수 이펙트 
+    - [ ] 팔로잉 이펙트 : 충전, 흡수, 
     
-3. 기타
-세부내용 : 기타사항
-    - [x] 개구리 IObtain → IContainer
-    - [ ] 전기 - 파이프 소팅 버그
-    - [ ] 스킬 호버 팁 윈도우 버그
-    - [ ] 파이프 리소스 
-    - [x] 플리커링 해결 방법 모색
-
-### 25주차(8.31. ~ 9.6.)
-1. UI  
-세부내용 : 플레이어 ui 변경
-    - [x] 플레이어 상태
-    - [x] 스킬
-
-2. 세이브 포인트  
-세부내용 : 추가 설정 변경
-    - [x] PowerSourceDevice && IsUsable Device 특이점
-    - [x] spawn Position 수정
-    - [x] 리스폰 포인트 갱신 comment
+3. New Skill  
+세부내용 : 새로운 스킬 이펙트 추가
+    - [ ] 스킬 Window
+    - [ ] 천둥
+    - [ ] 플래시
     
-3. 인게임 리소스 적용  
-세부내용 : 리소스 적용
-    - [x] 심장엔진
-    - [x] 부활장치
-
 4. 기타  
 세부내용 : 기타사항
-    - [x] 문 버그
-    - [x] 전기 소팅 버그
+    - [ ] 상호작용 범위 
+    - [ ] 파이프 리소스 변경
+    - [ ] 파이프 - 전기 소팅 버그 
+
+
+
 
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
@@ -705,7 +692,43 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 세부내용 : 인게임 리소스 적용
     - [x] 파이프
     - [x] 파워라인
+    
+### 25주차(8.31. ~ 9.6.)
+1. UI  
+세부내용 : 플레이어 ui 변경
+    - [x] 플레이어 상태
+    - [x] 스킬
 
+2. 세이브 포인트  
+세부내용 : 추가 설정 변경
+    - [x] PowerSourceDevice && IsUsable Device 특이점
+    - [x] spawn Position 수정
+    - [x] 리스폰 포인트 갱신 comment
+    
+3. 인게임 리소스 적용  
+세부내용 : 리소스 적용
+    - [x] 심장엔진
+    - [x] 부활장치
+
+4. 기타  
+세부내용 : 기타사항
+    - [x] 문 버그
+    - [x] 전기 소팅 버그
+
+### 26주차(9.7. ~ 9.13.)
+1. UI  
+세부내용 : skill Description  
+    - [x] Hover Tip : Skill Description
+    
+ 2. 스킬 이펙트 추가  
+ 세부내용 : 스킬 이펙트 추가
+    - [x] 흡수
+    - [x] 충전
+    
+3. 기타
+세부내용 : 기타사항
+    - [x] 개구리 IObtain → IContainer
+    - [x] 플리커링 해결 방법 모색
 
 
 ### 다음 주차 가이드라인
@@ -741,9 +764,9 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - SortingOrder : using UnityEngine.Rendering
     - Tilemap : using UnityEngine.Tilemap
     - Light2D : using UnityEngine.Experimental.Rendering.LWRP
-- RayCast unsing Speific Layer Filltering 
+- RayCast unsing Speific Layer Filltering   ←
     - https://dallcom-forever2620.tistory.com/18
-- Get Vector using angle(need to adjust Quaternion's(x,y,z) & StdVector)
+- Get Vector using angle(need to adjust Quaternion's(x,y,z) & StdVector)    ←
     - https://wiseraintown.tistory.com/entry/Transform-%EA%B0%81%EB%8F%84%EC%97%90-%EB%94%B0%EB%A5%B8-Object-%EB%B0%A9%ED%96%A5-%EA%B5%AC%ED%95%98%EA%B8%B0
     - `Quaternion.Euler(0, 0, x) * Vector3.right;`
 - Create Unity Editor custom Button to execute some Function
