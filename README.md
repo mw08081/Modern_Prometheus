@@ -4,9 +4,9 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 ### 27주차(9.14. ~ 9.20.)
 1. UI  
 세부내용 : skill Description  
-    - [ ] Hover tip window Design   ←
-    - [ ] Hover Tip window Bug  ←
-    - [ ] Add Skill Name into hoverTip window   ←
+    - [x] Hover tip window Design   ←
+    - [x] Hover Tip window Bug  ←
+    - [x] Add Skill Name into hoverTip window   ←
     - [ ] ESC Mechanism
     - [ ] Can't Hover when on Option
     
@@ -27,9 +27,6 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [ ] 상호작용 범위 
     - [ ] 파이프 리소스 변경
     - [ ] 파이프 - 전기 소팅 버그 
-
-
-
 
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
