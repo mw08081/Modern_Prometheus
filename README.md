@@ -4,16 +4,16 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 ### 27주차(9.14. ~ 9.20.)
 1. UI  
 세부내용 : skill Description  
-    - [x] Hover tip window Design   ←
-    - [x] Hover Tip window Bug  ←
-    - [x] Add Skill Name into hoverTip window   ←
+    - [x] Hover tip window Design   
+    - [x] Hover Tip window Bug  
+    - [x] Add Skill Name into hoverTip window   
     - [ ] ESC Mechanism
     - [ ] Can't Hover when on Option
     
 2. Skill Effect  
 세부내용 : 스킬 이펙트 점검
-    - [x] 은폐시 스킬 이펙트 표시 막기  ←
-    - [ ] 새로운 흡수 이펙트 
+    - [x] 은폐시 스킬 이펙트 표시 막기  
+    - [x] 새로운 흡수 이펙트 
     - [ ] 팔로잉 이펙트 : 충전, 흡수, 
     
 3. New Skill  
