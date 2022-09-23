@@ -26,6 +26,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 4. New Skill  
 세부내용 : 새로운 스킬 이펙트 추가
     - [ ] 스킬 Window
+    - [ ] RMB 스킬 UI
     - [ ] 천둥
     - [ ] 플래시
  
