@@ -20,7 +20,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
      
 5. 상호작용 메카니즘  
 세부내용 : 상호작용 rayCasting 
-    - [ ] 상하
+    - [x] 상하
     - [ ] 좌우
     
 4. New Skill  
