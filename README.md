@@ -7,7 +7,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] Hover tip window Design   
     - [x] Hover Tip window Bug  
     - [x] Add Skill Name into hoverTip window   
-    - [ ] ESC Mechanism
+    - [x] ESC Mechanism
     - [ ] Can't Hover when on Option
     
 2. Skill Effect  
