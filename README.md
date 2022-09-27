@@ -1,36 +1,7 @@
 # Modern_Prometheus 
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
-### 27, 28주차(9.14. ~ 9.27.)
-1. UI  
-세부내용 : skill Description  
-    - [x] Hover tip window Design   
-    - [x] Hover Tip window Bug  
-    - [x] Add Skill Name into hoverTip window   
-    
-2. Canvas  
-세부내용 : 캔버스 병합 및 hotKey 적용
-    - [x] 캔버스 병합(playerCanvas : tmp, inGameCanvas)
-    - [x] hotKey : esc, j, mouseMidBtn
-  
-3. Skill Effect  
-세부내용 : 스킬 이펙트 점검
-    - [x] 은폐시 스킬 이펙트 표시 막기  
-    - [x] 새로운 흡수 이펙트 
-    - [x] 팔로잉 이펙트 : 충전, 실패
-    - ~~[ ] 이펙트 버그 - 충전~~
-    - [x] 이펙트 버그 - 실패
-     
-4. 상호작용 메카니즘  
-세부내용 : 상호작용 범위 변경
-    - [x] 상하
-    - [x] 좌우
- 
-5. 기타  
-세부내용 : 기타사항
-    - [x] 파이프 리소스 변경
-    - [x] 파이프 - 전기 소팅 버그 
-    - [x] 컨테이너 레이어 
+
 
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
@@ -730,6 +701,37 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 세부내용 : 기타사항
     - [x] 개구리 IObtain → IContainer
     - [x] 플리커링 해결 방법 모색
+    
+### 27, 28주차(9.14. ~ 9.27.)
+1. UI  
+세부내용 : skill Description  
+    - [x] Hover tip window Design   
+    - [x] Hover Tip window Bug  
+    - [x] Add Skill Name into hoverTip window   
+    
+2. Canvas  
+세부내용 : 캔버스 병합 및 hotKey 적용
+    - [x] 캔버스 병합(playerCanvas : tmp, inGameCanvas)
+    - [x] hotKey : esc, j, mouseMidBtn
+  
+3. Skill Effect  
+세부내용 : 스킬 이펙트 점검
+    - [x] 은폐시 스킬 이펙트 표시 막기  
+    - [x] 새로운 흡수 이펙트 
+    - [x] 팔로잉 이펙트 : 충전, 실패
+    - [ ] ~~이펙트 버그 - 충전~~
+    - [x] 이펙트 버그 - 실패
+     
+4. 상호작용 메카니즘  
+세부내용 : 상호작용 범위 변경
+    - [x] 상하
+    - [x] 좌우
+ 
+5. 기타  
+세부내용 : 기타사항
+    - [x] 파이프 리소스 변경
+    - [x] 파이프 - 전기 소팅 버그 
+    - [x] 컨테이너 레이어 
 
 
 ### 다음 주차 가이드라인
