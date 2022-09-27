@@ -19,7 +19,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [ ] 천둥
     - [ ] 플레시
 
-4. RMB 스킬 UI
+4. RMB 스킬 UI  
 세부내용 : RMB스킬 관련 UI
     - [x] 스킬 UI
     
