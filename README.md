@@ -1,34 +1,30 @@
 # Modern_Prometheus 
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
-### 27주차(9.14. ~ 9.20.)
+### 27, 28주차(9.14. ~ 9.27.)
 1. UI  
 세부내용 : skill Description  
     - [x] Hover tip window Design   
     - [x] Hover Tip window Bug  
     - [x] Add Skill Name into hoverTip window   
-    - [x] ESC Mechanism
-    - [x] Can't Hover when on Option
     
-2. Skill Effect  
+2. Canvas  
+세부내용 : 캔버스 병합 및 hotKey 적용
+    - [x] 캔버스 병합(playerCanvas : tmp, inGameCanvas)
+    - [x] hotKey : esc, j, mouseMidBtn
+  
+3. Skill Effect  
 세부내용 : 스킬 이펙트 점검
     - [x] 은폐시 스킬 이펙트 표시 막기  
     - [x] 새로운 흡수 이펙트 
     - [x] 팔로잉 이펙트 : 충전, 실패
-    - [ ] 이펙트 버그 - 충전
+    - ~~[ ] 이펙트 버그 - 충전~~
     - [x] 이펙트 버그 - 실패
      
-5. 상호작용 메카니즘  
-세부내용 : 상호작용 rayCasting 
+4. 상호작용 메카니즘  
+세부내용 : 상호작용 범위 변경
     - [x] 상하
     - [x] 좌우
-    
-4. New Skill  
-세부내용 : 새로운 스킬 이펙트 추가
-    - [x] 스킬 Window
-    - [x] RMB 스킬 UI
-    - [ ] 천둥
-    - [ ] 플래시
  
 5. 기타  
 세부내용 : 기타사항
