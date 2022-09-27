@@ -8,7 +8,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [x] Hover Tip window Bug  
     - [x] Add Skill Name into hoverTip window   
     - [x] ESC Mechanism
-    - [ ] Can't Hover when on Option
+    - [x] Can't Hover when on Option
     
 2. Skill Effect  
 세부내용 : 스킬 이펙트 점검
@@ -21,12 +21,12 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 5. 상호작용 메카니즘  
 세부내용 : 상호작용 rayCasting 
     - [x] 상하
-    - [ ] 좌우
+    - [x] 좌우
     
 4. New Skill  
 세부내용 : 새로운 스킬 이펙트 추가
-    - [ ] 스킬 Window
-    - [ ] RMB 스킬 UI
+    - [x] 스킬 Window
+    - [x] RMB 스킬 UI
     - [ ] 천둥
     - [ ] 플래시
  
