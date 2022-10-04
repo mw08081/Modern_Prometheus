@@ -6,7 +6,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 세부내용 : 전기 흡수 관련 버그수정
     - [x] 전기 흡수 메카니즘 변경
     - [ ] 컨테이너 전기 흡수 버그
-    - [ ] w2p targetting transit 버그
+    - [x] w2p targetting transit 버그
     
 2. 스킬 시스템  
 세부내용 : 스킬 시스템 유틸 함수 추가
