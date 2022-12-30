@@ -880,6 +880,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 3. Tech  
    - UI 에셋 구매하여 남의 코드를 읽고 맛에 따라 적용  
 4. New Tech  
+   - Shdaer : StencilShader
    - LineRenderer : ExecuteInEditMode on Script   
    - coroutine 동기로드 / async - await 비동기   
 5. Creativity  
