@@ -872,6 +872,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 -------------------
 
 ## 기억에 남는 작업
+0. TeamWork
+   - Git Manager
 1. Optimazing  
    - circle Size cached  
    - object pooling  
