@@ -1,15 +1,15 @@
 # Modern_Prometheus 
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
-### 41, 42주차(12.21. ~ 01.03.)
+### 42주차(12.28. ~ 01.03.)
 1. RMB 스킬   
-   - [x] rmb 스킬 시퀀스 제작(41)  
-   - [x] 스킬 범위 UI(42)  
-   - [x] 포물 궤적 UI(42)
-   - [x] 스킬 시전 불가 UI(42)  
-   - [ ] 스킬 사거리 데이터 시트 연동(42)
-   - [ ] 스킬 범위 UI(42)
-   - [ ] 천둥 스킬 이펙트 메카니즘(42)  
+   - [x] 스킬 범위 UI
+   - [x] 포물 궤적 UI
+   - [x] 스킬 시전 불가 UI
+   - [ ] 스킬 사거리 데이터 시트 연동
+   - [ ] 원형 UI 케시 제작
+   - [ ] 스킬 범위 UI
+   - [ ] 천둥 스킬 이펙트 메카니즘
    - [ ] 갈바니즘 스킬 메카니즘 및 UI  
    - [ ] 갈바니즘 스킬 이펙트 메카니즘  
 
@@ -41,6 +41,11 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
    - [x] 아웃라인
    - [x] 아웃라인 쉐이더 적용
    - [x] 스텐실 쉐이더 추가 작업
+
+### 41주차(12.21. ~ 12.27.)
+1. RMB 스킬   
+   - [x] rmb 스킬 시퀀스 제작 
+
 
 
 ### 1주차(3.16. ~ 3.22.)
@@ -859,36 +864,31 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
     - [ ] 흡수량 버그
     - [ ] 컨테이너 트리거 전기 흡수 버그
 
-### 33주차(10.26. ~ 11.01.)
-휴1식
+### 33주차(10.26. ~ 11.01.)  
+휴식  
 
-### 다음 주차 가이드라인
+-------------------
 
-### 개발방향 가이드라인
-- Water 구간제외 개발 후 확장성과 공통점에 따른 상속 구현  
-- Water 구간제외 개발 후 물 lifeTime 메카니즘 구현
-- Water 구간제외 개발 후 물에서의 전기 흡수 메카니즘 개선
+## 기억에 남는 작업
+1. Optimazing  
+   - circle Size cached  
+   - object pooling  
+   - 프로파일링 - 리지드바디, 콜라이더. 바디타입    
+2. Math  
+   - LineRenderer : Draw Parabolic skill trajectory(Math - Mathf.sin)  
+   - Get Deg from V3 (Mathf, Quaternion)  
+3. Tech  
+   - UI 에셋 구매하여 남의 코드를 읽고 맛에 따라 적용  
+4. New Tech  
+   - LineRenderer : ExecuteInEditMode on Script   
+   - coroutine 동기로드 / async - await 비동기   
+5. Creativity  
+   - Player FOV Expansion  
 
-- 대각전기 전이 버그 수정   
-- fadeIn Effect 중에 옵션 페널이 실행되면 클릭이 불가한 점
-
-- 밝기조정  
-- 해상도조정  
-- 천둥 : 천둥
-
-### 기억에 남는 작업
-- 프로파일링 - 리지드바디, 콜라이더. 바디타입  
-- coroutine 동기로드 / async - await 비동기 
-- Optimazing
-- Player FOV Expansion
-- 파이프라인 따라 전기 생성  
-- Line Renederer
-- UI 에셋 구매하여 남의 코드를 읽고 맛에 따라 적용
-
-### 웃픈..
+## 웃픈..
 - cos()안에 계속 deg 값을 적용..  * Mathf.Deg2Rad
 
-### 새로운 개념
+## 새로운 개념
 - System.Enum.GetValue(typeof(EnumName)).Length  
 - gameObject.trasnform.childCount  
 - scripting API - https://docs.unity3d.com/ScriptReference
