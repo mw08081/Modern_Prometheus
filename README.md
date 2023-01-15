@@ -16,7 +16,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
    - [x] Q, F조작 불가
    - [x] F UI, OutLineMat OFF
    - [x] E UI
-   - [ ] 피격시 해제
+   - [x] 피격시 해제
    - [ ] 호버 네임 텍스트
  
 3. RMB 스킬 : 갈바니즘
