@@ -13,8 +13,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
    - [x] 천둥 스킬 이펙트
 
 2. E 스킬 : 블루프린트
-   - [ ] Q, F조작 불가
-   - [ ] F UI, OutLineMat OFF
+   - [x] Q, F조작 불가
+   - [x] F UI, OutLineMat OFF
    - [x] E UI
    - [ ] 피격시 해제
    - [ ] 호버 네임 텍스트
