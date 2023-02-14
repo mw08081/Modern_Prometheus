@@ -7,7 +7,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
    - [ ] 갈바니즘 스킬 이펙트 메카니즘   
 
 2. E 스킬 : Blue Print
-   - [x] 전도체 빗금
+   - [x] 전도체 빗금 해제
    - [ ] 전도체 색상 확정
    
 3. RMB Hold Mechanism
