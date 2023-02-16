@@ -12,7 +12,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
    
 3. RMB Hold Mechanism
    - [x] 뇌운
-   - [ ] 갈바니즘
+   - [x] 갈바니즘
 
 ### 34주차(11.02. ~ 11.08.)  
 1. 버그잡기
