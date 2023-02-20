@@ -71,6 +71,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
    
 4. 버그수정
 
+<details>
+<summary>1주차 ~</summary>
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
 세부내용 : 플레이어의 이동 구현
@@ -909,7 +911,9 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
    - LineRenderer : ExecuteInEditMode on Script   
    - coroutine 동기로드 / async - await 비동기   
 5. Creativity  
-   - Player FOV Expansion  
+   - Player FOV Expansion 
+   
+</details>
 
 ## 웃픈..
 - cos()안에 계속 deg 값을 적용..  * Mathf.Deg2Rad
