@@ -4,6 +4,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 ### 50주차(02.22. ~ 02.28.)
 1. 개구리 AI
    - [ ] 개구리 만들기
+  
 2. Moving Trajectory 수정
    - [ ] 선이 아닌 점으로 변경
 
