@@ -1,24 +1,43 @@
-# GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
+# It's Alive 팀 Galvanic Bride 작품 진행상황 보고서
+갈바닉 브라이드는 전기 능력을 보유한 주인공이 스텔스를 유지한채 스테이지를 해결하는 게임이다
 
-## What I learned
-- System.Enum.GetValue(typeof(EnumName)).Length  
-- gameObject.trasnform.childCount  
-- scripting API - https://docs.unity3d.com/ScriptReference
-    - SortingOrder : using UnityEngine.Rendering
-    - Tilemap : using UnityEngine.Tilemap
-    - Light2D : using UnityEngine.Experimental.Rendering.LWRP
+## 기록할만한 구현 목록
+1. 스킬 - Q : 전도와 흡수
+
+
+## 기억에 남는 작업
+0. TeamWork
+   - Git Manager
+1. Optimazing  
+   - circle Size cached  
+   - object pooling  
+   - 프로파일링 : 리지드바디, 콜라이더 바디타입    
+2. Math  
+   - LineRenderer : Draw Parabolic skill trajectory(Math - Mathf.sin)  
+   - Get Deg from V3 (Mathf, Quaternion)  
+   - Get Position relation between two object
+3. Tech  
+   - UI 에셋 구매하여 남의 코드를 읽고 맛에 따라 적용  
+4. New Tech  
+   - Shdaer : StencilShader
+   - LineRenderer : ExecuteInEditMode on Script   
+   - coroutine 동기로드 / async - await 비동기   
+5. Creativity  
+   - Player FOV Expansion 
+
+## 참고자료
 - RayCast unsing Speific Layer Filltering   ←
     - https://dallcom-forever2620.tistory.com/18
 - Get Vector using angle(need to adjust Quaternion's(x,y,z) & StdVector)    ←
     - https://wiseraintown.tistory.com/entry/Transform-%EA%B0%81%EB%8F%84%EC%97%90-%EB%94%B0%EB%A5%B8-Object-%EB%B0%A9%ED%96%A5-%EA%B5%AC%ED%95%98%EA%B8%B0
     - `Quaternion.Euler(0, 0, x) * Vector3.right;`
-- Create Unity Editor custom Button to execute some Function
-    - https://wergia.tistory.com/165
 - Event on Editor & Get WorldPosition using Event.mousePosition
     - https://answers.unity.com/questions/381630/listen-for-a-key-in-edit-mode.html
     - https://answers.unity.com/questions/877467/how-to-get-mouse-position-in-world-space-when-in-e.html
 - LineRenederer
     - https://beatchoi.github.io/unity3d/basics/2020/12/14/LineRenderer2/
+- Create Unity Editor custom Button to execute some Function
+    - https://wergia.tistory.com/165
 - How to save variable in custom editor in unity
     - https://postpiglet.netlify.app/posts/unity-prefabscenemark/
     - https://forum.unity.com/threads/custom-editor-variables-not-saving.513406/
@@ -28,28 +47,17 @@
     - pc.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 - Draw Bezier Curves Line
     - https://stackoverflow.com/questions/43547886/is-it-really-so-difficult-to-draw-smooth-lines-in-unity
+- System.Enum.GetValue(typeof(EnumName)).Length  
+- gameObject.trasnform.childCount  
+- scripting API - https://docs.unity3d.com/ScriptReference
+    - SortingOrder : using UnityEngine.Rendering
+    - Tilemap : using UnityEngine.Tilemap
+    - Light2D : using UnityEngine.Experimental.Rendering.LWRP
 
-## 기억에 남는 작업
-0. TeamWork
-   - Git Manager
-1. Optimazing  
-   - circle Size cached  
-   - object pooling  
-   - 프로파일링 - 리지드바디, 콜라이더. 바디타입    
-2. Math  
-   - LineRenderer : Draw Parabolic skill trajectory(Math - Mathf.sin)  
-   - Get Deg from V3 (Mathf, Quaternion)  
-3. Tech  
-   - UI 에셋 구매하여 남의 코드를 읽고 맛에 따라 적용  
-4. New Tech  
-   - Shdaer : StencilShader
-   - LineRenderer : ExecuteInEditMode on Script   
-   - coroutine 동기로드 / async - await 비동기   
-5. Creativity  
-   - Player FOV Expansion 
+## 구현 목록
+1. 
   
 ## 작업 일지
-
 ### 55 ~ 61주차(03.28. ~ 05.15.)
 1. 스킬 구현
    - [x] 블랙아웃 스킬 구현  
@@ -987,4 +995,3 @@
 
 ## 웃픈..
 - cos()안에 계속 deg 값을 적용..  * Mathf.Deg2Rad
-
