@@ -1,5 +1,4 @@
-# Modern_Prometheus 
-GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
+# GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
 ## What I learned
 - System.Enum.GetValue(typeof(EnumName)).Length  
