@@ -49,6 +49,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 5. Creativity  
    - Player FOV Expansion 
   
+## 작업 일지
+
 ### 55 ~ 61주차(03.28. ~ 05.15.)
 1. 스킬 구현
    - [x] 블랙아웃 스킬 구현  
