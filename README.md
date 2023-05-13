@@ -1,5 +1,53 @@
 # Modern_Prometheus 
 GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
+
+## What I learned
+- System.Enum.GetValue(typeof(EnumName)).Length  
+- gameObject.trasnform.childCount  
+- scripting API - https://docs.unity3d.com/ScriptReference
+    - SortingOrder : using UnityEngine.Rendering
+    - Tilemap : using UnityEngine.Tilemap
+    - Light2D : using UnityEngine.Experimental.Rendering.LWRP
+- RayCast unsing Speific Layer Filltering   ←
+    - https://dallcom-forever2620.tistory.com/18
+- Get Vector using angle(need to adjust Quaternion's(x,y,z) & StdVector)    ←
+    - https://wiseraintown.tistory.com/entry/Transform-%EA%B0%81%EB%8F%84%EC%97%90-%EB%94%B0%EB%A5%B8-Object-%EB%B0%A9%ED%96%A5-%EA%B5%AC%ED%95%98%EA%B8%B0
+    - `Quaternion.Euler(0, 0, x) * Vector3.right;`
+- Create Unity Editor custom Button to execute some Function
+    - https://wergia.tistory.com/165
+- Event on Editor & Get WorldPosition using Event.mousePosition
+    - https://answers.unity.com/questions/381630/listen-for-a-key-in-edit-mode.html
+    - https://answers.unity.com/questions/877467/how-to-get-mouse-position-in-world-space-when-in-e.html
+- LineRenederer
+    - https://beatchoi.github.io/unity3d/basics/2020/12/14/LineRenderer2/
+- How to save variable in custom editor in unity
+    - https://postpiglet.netlify.app/posts/unity-prefabscenemark/
+    - https://forum.unity.com/threads/custom-editor-variables-not-saving.513406/
+    - https://stackoverflow.com/questions/61238628/cannot-save-a-variable-of-a-editor-script
+    - https://assetstore.unity.com/packages/tools/utilities/play-mode-save-177452
+- Particle System Playing Stop immediately
+    - pc.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+- Draw Bezier Curves Line
+    - https://stackoverflow.com/questions/43547886/is-it-really-so-difficult-to-draw-smooth-lines-in-unity
+
+## 기억에 남는 작업
+0. TeamWork
+   - Git Manager
+1. Optimazing  
+   - circle Size cached  
+   - object pooling  
+   - 프로파일링 - 리지드바디, 콜라이더. 바디타입    
+2. Math  
+   - LineRenderer : Draw Parabolic skill trajectory(Math - Mathf.sin)  
+   - Get Deg from V3 (Mathf, Quaternion)  
+3. Tech  
+   - UI 에셋 구매하여 남의 코드를 읽고 맛에 따라 적용  
+4. New Tech  
+   - Shdaer : StencilShader
+   - LineRenderer : ExecuteInEditMode on Script   
+   - coroutine 동기로드 / async - await 비동기   
+5. Creativity  
+   - Player FOV Expansion 
   
 ### 55 ~ 61주차(03.28. ~ 05.15.)
 1. 스킬 구현
@@ -113,6 +161,7 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 
 <details>
 <summary>1주차 ~</summary>
+  
 ### 1주차(3.16. ~ 3.22.)
 1. 플레이어 8방향 이동 구현  
 세부내용 : 플레이어의 이동 구현
@@ -933,56 +982,8 @@ GameMakers 6기 It's Alive 팀 그룹 작품 진행상황 보고서
 휴식  
 
 -------------------
-
-## 기억에 남는 작업
-0. TeamWork
-   - Git Manager
-1. Optimazing  
-   - circle Size cached  
-   - object pooling  
-   - 프로파일링 - 리지드바디, 콜라이더. 바디타입    
-2. Math  
-   - LineRenderer : Draw Parabolic skill trajectory(Math - Mathf.sin)  
-   - Get Deg from V3 (Mathf, Quaternion)  
-3. Tech  
-   - UI 에셋 구매하여 남의 코드를 읽고 맛에 따라 적용  
-4. New Tech  
-   - Shdaer : StencilShader
-   - LineRenderer : ExecuteInEditMode on Script   
-   - coroutine 동기로드 / async - await 비동기   
-5. Creativity  
-   - Player FOV Expansion 
-   
 </details>
 
 ## 웃픈..
 - cos()안에 계속 deg 값을 적용..  * Mathf.Deg2Rad
 
-## 새로운 개념
-- System.Enum.GetValue(typeof(EnumName)).Length  
-- gameObject.trasnform.childCount  
-- scripting API - https://docs.unity3d.com/ScriptReference
-    - SortingOrder : using UnityEngine.Rendering
-    - Tilemap : using UnityEngine.Tilemap
-    - Light2D : using UnityEngine.Experimental.Rendering.LWRP
-- RayCast unsing Speific Layer Filltering   ←
-    - https://dallcom-forever2620.tistory.com/18
-- Get Vector using angle(need to adjust Quaternion's(x,y,z) & StdVector)    ←
-    - https://wiseraintown.tistory.com/entry/Transform-%EA%B0%81%EB%8F%84%EC%97%90-%EB%94%B0%EB%A5%B8-Object-%EB%B0%A9%ED%96%A5-%EA%B5%AC%ED%95%98%EA%B8%B0
-    - `Quaternion.Euler(0, 0, x) * Vector3.right;`
-- Create Unity Editor custom Button to execute some Function
-    - https://wergia.tistory.com/165
-- Event on Editor & Get WorldPosition using Event.mousePosition
-    - https://answers.unity.com/questions/381630/listen-for-a-key-in-edit-mode.html
-    - https://answers.unity.com/questions/877467/how-to-get-mouse-position-in-world-space-when-in-e.html
-- LineRenederer
-    - https://beatchoi.github.io/unity3d/basics/2020/12/14/LineRenderer2/
-- How to save variable in custom editor in unity
-    - https://postpiglet.netlify.app/posts/unity-prefabscenemark/
-    - https://forum.unity.com/threads/custom-editor-variables-not-saving.513406/
-    - https://stackoverflow.com/questions/61238628/cannot-save-a-variable-of-a-editor-script
-    - https://assetstore.unity.com/packages/tools/utilities/play-mode-save-177452
-- Particle System Playing Stop immediately
-    - pc.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-- Draw Bezier Curves Line
-    - https://stackoverflow.com/questions/43547886/is-it-really-so-difficult-to-draw-smooth-lines-in-unity
