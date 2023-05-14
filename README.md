@@ -2,10 +2,138 @@
 갈바닉 브라이드는 전기 능력을 보유한 주인공이 스텔스를 유지한채 스테이지를 해결하는 게임이다
 
 ## 기록할만한 구현 목록
-1. Skill - Galvanism : 플레이어가 기록한 경로를 따라 개구리를 이동시키는 스킬 (적 교란)  
-1) Update() 호출 시, 매 프레임 기록되는 라인 렌더러의 좌표가 너무 많아서 각 좌표 사이의 방향 벡터를 계산할 경우 소숫점 아래까지 많이 동일하여 방향 벡터가 (0, 0, 0)으로 표시됨  
-![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/dd1e95b4-3f87-42e4-b504-3c9b8e8fe65e) << 구현 목표  
-![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/f049036b-2757-4ef2-9924-f570c5d9d848) << 각 좌표사이의 방향 벡터가 제대로 계산되지 못함  
+### 1. Skill - Galvanism : 플레이어가 기록한 경로를 따라 개구리를 이동시키는 스킬 (적 교란)  
+> 변경사항
+> Q1. update()함수에 의해 매 프레임 기록되는 포인트 사이에서 방향 벡터 계산이 어려움  →  특정 거리마다 포인트를 기록하도록 변경
+> Q2. 플레이어가 기록한 경로를 가시적으로 표현하는데 사용되는 포인트를 빈번하게 생성/파괴할 경우 부하가 생김  →  포인트를 오브젝트풀로 관리함
+> Q3. 오브젝트 풀에서 Dequeue된 오브젝트들의 머테리얼을 순차적으로 관리하는데 어려움  →  Dequeue된 오브젝트들을 List에 다시 담아 순차적으로 관리함
+> Q4. 순차적으로 관리되는 오브젝트들이더라도 빈번한 스프라이트 컴포넌트를 가져올 경우 부하가 생김  →  Tuple<GameObject, SpriteRenderer>로 관리함  
+
+　  
+> Q. Update() 호출 시, 매 프레임 기록되는 라인 렌더러의 좌표가 너무 많아서 각 좌표 사이의 방향 벡터를 계산할 경우 소숫점 아래까지 많이 동일하여 방향 벡터가 (0, 0, 0)으로 표시됨  
+![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/113d3b12-f321-4493-a984-481d81f87d42)   << 구현 목표  
+![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/f2eaeee7-830c-4b34-a94f-570c43f20e0c)   << 각 좌표사이의 방향 벡터가 제대로 계산되지 못함  
+
+A. 라인 렌더러의 좌표도 너무 많을 경우 부하가 생기기때문에 특정 거리(0.5f)씩 마다 좌표를 찍는 방식으로 변경
+```C#
+void DrawMovingTrajectory()
+{
+    if ( /* ...(조건A) */  && Vector3.Distance(lastPos, mousePos) >= TRAJECTORYINTERVAL && /* ...(조건C) */ )    //TRAJECTORYINTERVAL = 0.5f;
+    {
+        //최대 사용량을 초과할 경우 더 이상 그려지지 않는다
+        if (currentDT >= allowanceDT) 
+        {
+            return; 
+        }
+
+        //특정 거리(0.5f)마다 점 추가 시퀀스    
+        AddTrajectoryPoint(Vector3.zero);
+    }
+}
+```
+  　  
+  　  
+> Q. 플레이어에의해 그려지는 라인 렌더러를 쉽게 식별하기 위해 0.5f거리마다 노란색 점을 표시하는데, 지속적으로 화살표 오브젝트를 생성/파괴할 경우 무거운 Instantiate()/Destroy()를 호출하여 부하를 일으킨다
+
+A. 화살표 오브젝트를 오브젝트 풀링하여 관리하면 빈번한 생성과 파괴를 피할 수 있다.
+```C#
+Queue<GameObject> pointPool = new Queue<GameObject>();          //포인트 풀
+
+//화살표 오브젝트 풀 생성
+void GeneratePointPool()
+{
+    for (int i = 0; i < poolCount; i++)
+    {
+        pointPool.Enqueue(GeneratePoint());
+    }
+}
+
+//포인트 생성 함수
+GameObject GeneratePoint()
+{
+    GameObject go = Instantiate(point, transform);
+    go.SetActive(false);
+    
+    return go;
+}
+
+//포인트 요청
+GameObject GetPointFromQueue()
+{
+    //예외처리를 통해 포인트가 없는 경우를 대비
+    try
+    {
+        return pointPool.Dequeue();
+    }
+    catch
+    {
+        pointPool.Enqueue(GeneratePoint());             //추가 생산하여 인큐,
+        return pointPool.Dequeue();                     //그리고 반환
+    }
+}
+```
+  　  
+  　  
+> Q. 월드에 배치된 포인트의 흐름을 확인시켜주기 위해 각 포인트 스프라이트의 머테리얼을 순차적으로 한 개씩 머테리얼을 변경해줘야 하는데, 단순히 오브젝트 풀에서 Dequeue()된 것만으로는 관리가 어려움
+  
+A. Dequeue()된 오브젝트를 List<GameObject>에 넣어서 순차적으로 관리
+```C#
+List<GameObject> pointList = new List<GameObject>();            //Enqueue 포인트 리스트
+ 
+void PointOnTrajectory(Vector3 _position)
+{
+    GameObject go = GetPointFromQueue();
+    pointList.Add(go);                          //큐에서 나온 포인트를 리스트로 삽입(순차적인 머테리얼 관리와 일괄 비활을 위한 삽입)
+ 
+    // ...
+}
+ 
+IEnumerator IterateListForChangingMat()
+{
+    for (int i = 0; i < pointList.Count; i++)      //for 을 통해 순차적으로 머테리얼 변경
+    {
+        pointList[i].getComponent<SpriteReneder>().material = glowMat;             //머테리얼 변경
+        pointList[i == 0 ? pointList.Count - 1 : i - 1].getComponent<SpriteRenderer>().material = defaultMat;     //머테리얼 원복
+        
+        yield return INTERATION_INTERVAL;
+    }
+}
+```
+　  
+　    
+> Q. 월드에 배치된 포인트 한 번에 한 개씩 Glow Effect를 부여하려고 할 때, 매 번 getComponent<SpriteRenederer>()를 하면 부하가 생김  
+![gv2](https://github.com/mw08081/Modern_Prometheus/assets/58582985/870a7f5f-48dd-4015-a8e4-fd3fdd55e69d)  << 구현목표  
+
+A. 포인트 오브젝트 풀을 `Queue<GameObject>`가 아닌 `Queue<Tuple<Gameobject, SpriteRenderer>>`로 관리한다  
+```C#
+Queue<Tuple<GameObject, SpriteRenderer>> pointPool = new Queue<Tuple<GameObject, SpriteRenderer>>();          //포인트 풀
+
+//풀 생성과 풀 오브젝트 리퀘스트
+Tuple<GameObject, SpriteRenderer> GeneratePoint()
+{
+    //Instantiate 과정
+
+    Tuple<GameObject, SpriteRenderer> tuple 
+             = new Tuple<GameObject, SpriteRenderer>(go, go.GetComponentInChildren<SpriteRenderer>());    //최초에 스프라이트렌더러를 받아옴
+    return tuple;
+}
+Tuple<GameObject, SpriteRenderer> GetPointFromQueue()
+{
+   // ...
+}
+ 
+//tuple.Item2 에 저장된 스프라이트 렌더러 머테리얼 
+IEnumerator IterateListForChangingMat()
+{
+    for (int i = 0; i < pointList.Count; i++)
+    {
+        pointList[i].Item2.material = glowMat;
+        pointList[i == 0 ? pointList.Count - 1 : i - 1].Item2.material = defaultMat;
+        yield return INTERATION_INTERVAL;
+    }
+    isInIterating = false;
+}
+```
  
 
 ## 기억에 남는 작업
