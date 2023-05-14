@@ -135,6 +135,77 @@ IEnumerator IterateListForChangingMat()
     isInIterating = false;
 }
 ```
+　  
+　  
+### 2. Skill - bluePrint : 청사진과 같이 현재 플레이어 주변의 맵 상황을 확인하는 스킬
+![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/81544dc2-c76c-443a-956b-968b6222e548)  
+변경사항  
+- 특정한 오브젝트를 해당하는 색상으로 표시하는데, 각 오브젝트들의 스텐실 스프라이트를 두개씩 하여 관리하기 어려움  <br> →  생삭으로 표시될 오브젝트의 스프라이트를 처음부터 스텐실 버퍼를 가지며, 온전하게 그려내는 머테리얼로 설정한 뒤 맵 전체에 스텐실 버퍼를 표시하는 필터를 배치
+- 색상이 적용된 오브젝트 이외에는 좀 더 어두운 색상으로 맵을 가리듯 표시하는 방법 모색  <br> →  스텐실 버퍼가 없는 곳은 스텐실 버퍼값이 0이므로 스텐실 버퍼 값이 0인 부분을 검은색으로 설정
+
+　  
+> Q. 최초엔 스텐실 머테리얼이 적용된 스프라이트를 블루프린트 스킬 활성화 시 setActive(true) 설정하고, 스킬 비활성화 시엔 setActive(false)시키는 방식으로 고안되었다. 그러나 setActive()시킬 오브젝트가 한 개일 경우엔 문제가 없지만 이러한 오브젝트가 많을 경우에는 관리가 어렵고 불필요한 작업이 발생할 수 있을 것 같아서 더 좋은 방식을 고안해기로 했다  
+
+![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/a28ab91c-963d-421d-a388-bd33b8c289a1)  
+![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/8e4fc2c5-37bc-49b0-a942-3e9b7f0fa64d)  << 머테리얼이 stencil_Q인 스프라이트를 on/off 해야한다
+
+A. 기본적으로 색상이 입혀질 오브젝트는 그대로 그리며, 스텐실 버퍼를 변경하기만 한다. 그리고 맵 전체를 덮는 스텐실 필터 오브젝트를 생성하여 스텐실 필터와 겹쳐지며 스텐실 버퍼값이 동일한 경우 해당 부분에 색상을 표시하는 방식으로 진행한다
+```shader
+// 오브젝트는 스텐실 버퍼값만 변경(Pass Replace)하면서 항상 그대로 그려낸다(Comp Always)
+Pass
+{
+    Tags { "LightMode" = "Universal2D" }
+
+    Stencil
+    {
+        Ref [_StencilValue]
+        Comp Always
+        Pass Replace
+    }
+    //...
+}
+    
+//스텐실 버퍼 필터 오브젝트는 스텐실 버퍼값은 변경하지 않고, 스텐실 버퍼값이 동일한 경우에만 그린다(Comp Equal)
+Pass
+{
+    Tags { "LightMode" = "Universal2D" }
+
+    Stencil
+    {
+        Ref[_StencilValue]
+        Comp Equal
+    }
+    //....
+}
+```
+　  
+　  
+> Q. 색상이 표시되는 오브젝트 이외에 벽이나 길 같은 것은 좀 더 검은색으로 보이게 하고싶었다
+
+![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/fdd884a9-c310-49dd-a1ce-a3140258c965) << 구현 전  
+![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/083e96d9-5556-4457-8ea1-35a2d1253795) << 구현 후
+
+
+A. 좀 더 검은색으로 표시된 부분들의 공통점을 생각해보니 스텐실 버퍼가 변경되지 않은( 스텐실 버퍼 == 0) 부분이었다. 그래서 스텐실 버퍼 필터와 동일한 방식으로 스텐실 버퍼가 0인 부분을 짙은 회색으로 색을 입히면 될 것같다고 생각했다.
+```shader
+// 사전에 스텐실 버퍼값을 변경할 오브젝트는 존재하지 않는다( 스텐실 버퍼가 0인 그대로 진행)
+
+// 스텐실 버퍼가 0인 부분을 좀 더 검은색으로 색을 입힐 스텐실 버퍼 필터의 쉐이더 pass 내용
+Pass
+{
+    Tags { "LightMode" = "Universal2D" }
+
+    Stencil
+    {
+        Ref 0
+        Comp Equal
+    }
+    //....
+}
+```
+
+  　  
+  　  
  
 
 ## 기억에 남는 작업
