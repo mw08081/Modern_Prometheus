@@ -240,23 +240,25 @@ Pass
 
 ## 기억에 남는 작업
 0. TeamWork
-   - Git Manager
+   - Git Manager : 프로젝트의 버전관리를 깃 브랜치를 이용하여 작업 주도
 1. Optimazing  
-   - circle Size cached  
    - object pooling  
-   - 프로파일링 : 리지드바디, 콜라이더 바디타입    
+        - skill effect prefab 오브젝트 풀링
+        - circle Size cached : 빈번한 스킬관련 원형 오브젝트를 생성할 경우, 오브젝트 생성/파괴
+        - movingTrajectory : 개구리 이동경로를 가시적으로 표시하기 위한 화살표 오브젝트를 풀링
+   - 프로파일링 : 리지드바디, 콜라이더 바디타입  별로 프로젝트 부하를 프로파일링 함  
 2. Math  
-   - LineRenderer : Draw Parabolic skill trajectory(Math - Mathf.sin)  
-   - Get Deg from V3 (Mathf, Quaternion)  
-   - Get Position relation between two object
+   - LineRenderer : Draw Parabolic skill trajectory(Math - Mathf.sin) 
+   - Get Deg from V3 (Mathf, Quaternion) : Quaternion 사원수를 이용하여 각도를 벡터로 계산
+   - Get Position relation between two object : 벡터의 외적을 이용하여 두 오브젝트간의 위치관계를 확인
 3. Tech  
-   - UI 에셋 구매하여 남의 코드를 읽고 맛에 따라 적용  
+   - UI 에셋 구매하여 남의 코드를 읽고 맛에 따라 적용 : 구매한 에셋에 대해서 게임에 맞게 적용
 4. New Tech  
-   - Shdaer : StencilShader
-   - LineRenderer : ExecuteInEditMode on Script   
-   - coroutine 동기로드 / async - await 비동기   
+   - Shdaer : Stencil Buffer를 이용하여 StencilShader 를 제작함으로써, 보이지 않는 플레이어를 효과적으료 표현
+   - LineRenderer : ExecuteInEditMode on Script 를 이용하여 유니티 에디터 상에서 전선 연결 작업을 용이하게 함
+   - coroutine 동기로드 / async - await 비동기 를 이용하여 드라이브의 엑셀 데이터 로딩을 용이하게 함
 5. Creativity  
-   - Player FOV Expansion 
+   - Player FOV Expansion : 마우스를 이용하여 플레이어의 시야 확장을 하는 방식을 유니티에서 제공하는 시네머신을 이용하여 간편하게 구현함
 
 ## 참고자료
 - RayCast unsing Speific Layer Filltering   ←
