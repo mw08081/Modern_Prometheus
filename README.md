@@ -141,13 +141,12 @@ IEnumerator IterateListForChangingMat()
 > Q. 개구리와 최초 마우스 클릭 지점사이를 보간하지 않을 경우 개구리가 한 번에 엄청난 거리를 이동하는 버그가 생긴다
   
 ![nointerpol](https://github.com/mw08081/Modern_Prometheus/assets/58582985/74505b0d-7608-4c9e-aef5-4c09bb6febdd)  << 보간 전  
-![interpol](https://github.com/mw08081/Modern_Prometheus/assets/58582985/fbeb97f2-af2a-4424-8c23-c942400556e6)    << 보간 후
+![interpol](https://github.com/mw08081/Modern_Prometheus/assets/58582985/fbeb97f2-af2a-4424-8c23-c942400556e6)    << 보간 후  
 A. 개구리와 최초 마우스 입력 위치가 0.5f 이상일 경우 그 사이를 0.5f단위로 보간하여 라인렌더러에 좌표를 삽입한다
 ```C#
 bool InterpolateTrajectory()
 {
-    mousePos = GameManager.Instance.GetCurrentSceneT<InGameScene>().SkillSystem.worldMPos;      //마우스 포지션 할당후 
-
+    // ...
     float interpolDist = Vector3.Distance(mousePos, critterPos);                               //개구리와 최초 마우스 입력 위치의 거리 계산
     if (interpolDist < 0.6f) return true;                                                      //0.6미만이면 보간할 필요 없음(취소조건)
 
