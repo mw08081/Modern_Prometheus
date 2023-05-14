@@ -3,11 +3,11 @@
 
 ## 기록할만한 구현 목록
 ### 1. Skill - Galvanism : 플레이어가 기록한 경로를 따라 개구리를 이동시키는 스킬 (적 교란)  
-> 변경사항
-> Q1. update()함수에 의해 매 프레임 기록되는 포인트 사이에서 방향 벡터 계산이 어려움  →  특정 거리마다 포인트를 기록하도록 변경
-> Q2. 플레이어가 기록한 경로를 가시적으로 표현하는데 사용되는 포인트를 빈번하게 생성/파괴할 경우 부하가 생김  →  포인트를 오브젝트풀로 관리함
-> Q3. 오브젝트 풀에서 Dequeue된 오브젝트들의 머테리얼을 순차적으로 관리하는데 어려움  →  Dequeue된 오브젝트들을 List에 다시 담아 순차적으로 관리함
-> Q4. 순차적으로 관리되는 오브젝트들이더라도 빈번한 스프라이트 컴포넌트를 가져올 경우 부하가 생김  →  Tuple<GameObject, SpriteRenderer>로 관리함  
+변경사항  
+- update()함수에 의해 매 프레임 기록되는 포인트 사이에서 방향 벡터 계산이 어려움  <br> →  특정 거리마다 포인트를 기록하도록 변경  
+- 플레이어가 기록한 경로를 가시적으로 표현하는데 사용되는 포인트를 빈번하게 생성/파괴할 경우 부하가 생김  <br> →  포인트를 오브젝트풀로 관리함  
+- 오브젝트 풀에서 Dequeue된 오브젝트들의 머테리얼을 순차적으로 관리하는데 어려움  <br> →  Dequeue된 오브젝트들을 List에 다시 담아 순차적으로 관리함  
+- 순차적으로 관리되는 오브젝트들이더라도 빈번한 스프라이트 컴포넌트를 가져올 경우 부하가 생김  <br> →  Tuple<GameObject, SpriteRenderer>로 관리함    
 
 　  
 > Q. Update() 호출 시, 매 프레임 기록되는 라인 렌더러의 좌표가 너무 많아서 각 좌표 사이의 방향 벡터를 계산할 경우 소숫점 아래까지 많이 동일하여 방향 벡터가 (0, 0, 0)으로 표시됨  
@@ -107,6 +107,7 @@ IEnumerator IterateListForChangingMat()
 A. 포인트 오브젝트 풀을 `Queue<GameObject>`가 아닌 `Queue<Tuple<Gameobject, SpriteRenderer>>`로 관리한다  
 ```C#
 Queue<Tuple<GameObject, SpriteRenderer>> pointPool = new Queue<Tuple<GameObject, SpriteRenderer>>();          //포인트 풀
+List<Tuple<GameObject, SpriteRenderer>> pointList = new List<Tuple<GameObject, SpriteRenderer>>();            //Enqueue 포인트 리스트
 
 //풀 생성과 풀 오브젝트 리퀘스트
 Tuple<GameObject, SpriteRenderer> GeneratePoint()
@@ -185,8 +186,6 @@ IEnumerator IterateListForChangingMat()
     - Tilemap : using UnityEngine.Tilemap
     - Light2D : using UnityEngine.Experimental.Rendering.LWRP
 
-## 구현 목록
-1. 
   
 ## 작업 일지
 ### 55 ~ 61주차(03.28. ~ 05.15.)
