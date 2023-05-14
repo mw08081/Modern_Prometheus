@@ -113,8 +113,8 @@ Tuple<GameObject, SpriteRenderer> GeneratePoint()
 {
     //Instantiate 과정
 
-    Tuple<GameObject, SpriteRenderer> tuple 
-             = new Tuple<GameObject, SpriteRenderer>(go, go.GetComponentInChildren<SpriteRenderer>());    //최초에 스프라이트렌더러를 받아옴
+    Tuple<GameObject, SpriteRenderer> tuple                     //최초에 스프라이트렌더러를 받아옴
+             = new Tuple<GameObject, SpriteRenderer>(go, go.GetComponentInChildren<SpriteRenderer>());    
     return tuple;
 }
 Tuple<GameObject, SpriteRenderer> GetPointFromQueue()
