@@ -138,7 +138,7 @@ IEnumerator IterateListForChangingMat()
 ```
 　  
 　  
-> Q. 개구리와 최초 마우스 클릭 지점사이를 보간하여 라인렌더러에 추가해주지 않으면 개구리가 한 번에 엄청난 거리를 이동하는 버그가 생긴다
+> Q. 개구리와 최초 마우스 클릭 지점사이를 보간하지 않을 경우 개구리가 한 번에 엄청난 거리를 이동하는 버그가 생긴다
   
 ![nointerpol](https://github.com/mw08081/Modern_Prometheus/assets/58582985/74505b0d-7608-4c9e-aef5-4c09bb6febdd)  << 보간 전  
 ![interpol](https://github.com/mw08081/Modern_Prometheus/assets/58582985/fbeb97f2-af2a-4424-8c23-c942400556e6)    << 보간 후
