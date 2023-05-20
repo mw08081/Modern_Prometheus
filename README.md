@@ -1,4 +1,4 @@
-# It's Alive 팀 Galvanic Bride 작품 진행상황 보고서
+# It's Alive 팀 Galvanic Bride 작품 진행상황 보고서 
 갈바닉 브라이드는 전기 능력을 보유한 주인공이 스텔스를 유지한채 스테이지를 해결하는 게임이다
 
 ## 기록할만한 구현 목록
