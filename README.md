@@ -15,7 +15,7 @@
 ![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/113d3b12-f321-4493-a984-481d81f87d42)   << 구현 목표  
 ![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/f2eaeee7-830c-4b34-a94f-570c43f20e0c)   << 각 좌표사이의 방향 벡터가 제대로 계산되지 못함  
 
-A. 라인 렌더러의 좌표도 너무 많을 경우 부하가 생기기때문에 특정 거리(0.5f)씩 마다 좌표를 찍는 방식으로 변경 
+A. 라인 렌더러의 좌표도 너무 많을 경우 부하가 생기기때문에 특정 거리(0.5f)씩 마다 좌표를 찍는 방식으로 변경  
 ```C#
 void DrawMovingTrajectory()
 {
