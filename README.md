@@ -352,10 +352,10 @@ Pass
 ### 72주차(7.25. ~ 7.31.)
 1. 버그 수정
 2. Skill panel
-   - [ ] 경험치 슬라이더
-   - [ ] 데이터 베이스 연동
-   - [ ] 환경 전력 흡수 페널티 제거
-   - [ ] 스킬포인트 : player.ic → skillPointSys
+   - [x] 경험치 슬라이더
+   - [x] 데이터 베이스 연동
+   - [x] 환경 전력 흡수 페널티 제거
+   - [x] 스킬포인트 : player.ic → skillPointSys
 3. skill Panel buff
    - [x] 버프 획득 메커니즘
    - [x] 버프 에니메이션
