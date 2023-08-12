@@ -381,7 +381,7 @@ Pass
 1. 버그 수정
    - [x] 램프 스텐실 소팅
 2. 브라이드 스파인
-   - [ ] 스파인 및 에니메이션
+   - [ ] 스파인 및 에니메이션 
 3. 리소스 업데이트
    - [ ] resurrection Device
    - [ ] skill panel text
