@@ -259,6 +259,14 @@ Pass
    - coroutine 동기로드 / async - await 비동기 를 이용하여 드라이브의 엑셀 데이터 로딩을 용이하게 함
 5. Creativity  
    - Player FOV Expansion : 마우스를 이용하여 플레이어의 시야 확장을 하는 방식을 유니티에서 제공하는 시네머신을 이용하여 간편하게 구현함
+  
+## 에피소드
+1. 스텐실을 위한 3주간 고민
+2. 변수 변경은 통일된 장소에서,, 함부로, 별도로 변경을 하면 에러발생시 파악이 어렵다
+3. BIC , 버닝비버, BIGS 등 전시
+4. 펀딩
+5. 기획팀과의 소통을 통해 이상한점, 어색한점 등 의견을 피력
+6. A가 작업한것을 B가 업그레이드를 위해 그냥 가져다가 쓰니까 오류가 발생. (책상의 playerAttacked Layer, playerAttacked Layer를 감자하는 타임라인트리거)
 
 ## 참고자료
 - RayCast unsing Speific Layer Filltering   ←
