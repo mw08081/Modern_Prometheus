@@ -10,7 +10,7 @@
 - 순차적으로 관리되는 오브젝트들이더라도 빈번한 스프라이트 컴포넌트를 가져올 경우 부하가 생김  <br> →  Tuple<GameObject, SpriteRenderer>로 관리함    
 - 스킬 시전간에 플레이어가 반드시 마우스 포인트를 개구리에서부터 시작할 보장이 없었다  <br> →  개구리와 최초 마우스 클릭 지점 사이를 보간하여 
 
-　  
+　   
 > Q. Update() 호출 시, 매 프레임 기록되는 라인 렌더러의 좌표가 너무 많아서 각 좌표 사이의 방향 벡터를 계산할 경우 소숫점 아래까지 많이 동일하여 방향 벡터가 (0, 0, 0)으로 표시됨  
 ![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/113d3b12-f321-4493-a984-481d81f87d42)   << 구현 목표  
 ![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/f2eaeee7-830c-4b34-a94f-570c43f20e0c)   << 각 좌표사이의 방향 벡터가 제대로 계산되지 못함  
