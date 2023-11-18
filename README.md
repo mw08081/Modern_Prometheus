@@ -268,6 +268,14 @@ Pass
 5. 기획팀과의 소통을 통해 이상한점, 어색한점 등 의견을 피력
 6. A가 작업한것을 B가 업그레이드를 위해 그냥 가져다가 쓰니까 오류가 발생. (책상의 playerAttacked Layer, playerAttacked Layer를 감자하는 타임라인트리거)
 
+7. 스텐실 노력
+에셋을 사서 입맛에 맞게 작업하기
+최xx과의 충돌
+미흡한 의사소통으로 인한 이미지 리소스 오류
+최적화에 대한 학습
+수학의 활용(외적,내적 삼각함수: 뇌운 궤적,로렌치니 원형회전,개구리점프, 역삼: 백터로 각도계산-스킬이펙트배치시 시작점과 끝점의 각도계산, 갈바니즘 포인트 배치시-이전 점과의 벡터를 구하여 각도계산)
+LINE_RENDERER, json, excel, RayCasting, OverLap, 
+
 ## 참고자료
 - RayCast unsing Speific Layer Filltering   ←
     - https://dallcom-forever2620.tistory.com/18
