@@ -1,6 +1,3 @@
-<img width="538" height="286" alt="000002447967919491120240121014413536" src="https://github.com/user-attachments/assets/b2c9bddf-bb8d-4dbc-a7dc-3449cb419348" />
-# 갈브
-
 # 프로젝트 소개
 
 - 개발엔진 : Unity5(2020.3.30)
