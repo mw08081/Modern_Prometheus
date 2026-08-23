@@ -36,6 +36,11 @@
 [장치](https://app.notion.com/p/125ce4f4d10880da8352c05f784713ca?pvs=21) : 램프, 로렌치니, 파워뱅크
 
 [기반시스템](https://app.notion.com/p/125ce4f4d10880aea93de337ef2db61a?pvs=21) : 스텐실 쉐이더, 오브젝트 풀링
+  
+<br/>
+<br/>
+<br/>
+  
 
 ## 스킬
 
@@ -239,6 +244,11 @@ Pass
 <img width="855" height="467" alt="Image" src="https://github.com/user-attachments/assets/e6f44427-4e98-4088-98be-bded68455f87" />
 
 ---
+  
+<br/>
+<br/>
+<br/>
+  
 
 ## 장치
 
@@ -476,6 +486,11 @@ IEnumerator Connect_PowerLine(GameObject powerLine)
 <img width="765" height="346" alt="Image" src="https://github.com/user-attachments/assets/17cd193d-15ce-458a-886f-2a27daf8f097" />
 
 ---
+  
+<br/>
+<br/>
+<br/>
+  
 
 ## 기반시스템
 
@@ -597,15 +612,16 @@ public void ReturnSkillEffect(GameObject gameObject, SkillEffectCode skillEffect
 
 ```
 
-![오브젝트 요청함수는 오버로딩으로 다양하게 요청가능](%EA%B0%88%EB%B8%8C/image%202.png)
-
-오브젝트 요청함수는 오버로딩으로 다양하게 요청가능
-
 구현결과
 
 <img width="869" height="346" alt="Image" src="https://github.com/user-attachments/assets/608bcd44-317e-488c-86ca-abea32250300" />
 
 
+  
+<br/>
+<br/>
+<br/>
+  
 0. TeamWork
    - Git Manager : 프로젝트의 버전관리를 깃 브랜치를 이용하여 작업 주도
 1. Optimazing  
