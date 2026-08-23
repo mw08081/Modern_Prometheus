@@ -7,7 +7,9 @@
 - 출      시 : 2023.10
 - 게임설명 : 프랑켄슈타인의 원작소설을 바탕으로하며, 갈바니즘 이론(전기능력)을 주된 기믹으로 스테이지를 클리어하는 잠입, 퍼즐, 액션 게임
 
-[Galvanic Bride](https://store.steampowered.com/app/2516530?snr=5000_5100__)
+<a href="https://store.steampowered.com/app/2516530?snr=5000_5100__">
+    <img src="https://github.com/user-attachments/assets/89ff3bfc-3643-4dbb-a75f-a680b7273785" alt="img_steam" width="705" height="157">
+</a>
 
 # 프로젝트 이력
 
@@ -45,7 +47,7 @@
 
 - 2D 탑다운 뷰의 게임에서 포물선 궤적과 투사체 투척을 표현
 
-![thunderStorm.png](%EA%B0%88%EB%B8%8C/thunderStorm.png)
+<img width="666" height="345" alt="thunderStorm" src="https://github.com/user-attachments/assets/4ad89098-e8ac-4da9-8c64-98ff3ad359b7" />
 
 구현방법 
 
@@ -53,7 +55,8 @@
 - x 좌표 : 임의의 값(30)으로 구간을 설정 (좌표 개수 : 30개)
 - y 좌표 : Sin그래프의 x 좌표로부터 얻어지는 값
 
-![sin.png](%EA%B0%88%EB%B8%8C/sin.png)
+<img width="853" height="404" alt="sin" src="https://github.com/user-attachments/assets/fa830659-44e8-4eab-a16a-ab84258bc559" />
+
 
 코드
 
@@ -96,7 +99,7 @@
 - 스킬 시전간에 플레이어가 반드시 마우스 포인트를 개구리에서부터 시작할 보장이 없었다
 → 개구리와 최초 마우스 클릭 지점 사이를 보간하여 중간 경로 삽입
 
-![image.png](%EA%B0%88%EB%B8%8C/image.png)
+<img width="820" height="289" alt="image" src="https://github.com/user-attachments/assets/fdab0a1e-2888-482e-b267-901468204286" />
 
 구현방법 
 
@@ -185,9 +188,11 @@
     ```
     
 
-구현결과
+구현결과  
+![gv2](https://github.com/mw08081/Modern_Prometheus/assets/58582985/870a7f5f-48dd-4015-a8e4-fd3fdd55e69d)  << 시전
+![nointerpol](https://github.com/mw08081/Modern_Prometheus/assets/58582985/74505b0d-7608-4c9e-aef5-4c09bb6febdd)  << 개구리 이동: 보간 전  
+![interpol](https://github.com/mw08081/Modern_Prometheus/assets/58582985/fbeb97f2-af2a-4424-8c23-c942400556e6)    << 개구리 이동: 보간 후  
 
-보간전, 보간후, 드로우 지프
 
 ### III. 블루프린트 - 맵의 구조를 스캔하는 스킬
 
