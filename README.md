@@ -1,3 +1,4 @@
+<img width="538" height="286" alt="000002447967919491120240121014413536" src="https://github.com/user-attachments/assets/b2c9bddf-bb8d-4dbc-a7dc-3449cb419348" />
 # 갈브
 
 # 프로젝트 소개
@@ -201,7 +202,7 @@
 - 특정한 오브젝트를 오브젝트 타입 색상으로 하이라이트하여 표시
 - 그 외의 구조물은 더 어두운 검은색으로 표시
 
-![000002447967919491120240121014413536.png](%EA%B0%88%EB%B8%8C/000002447967919491120240121014413536.png)
+<img width="538" height="286" alt="000002447967919491120240121014413536" src="https://github.com/user-attachments/assets/be39239e-a9a4-4caf-b670-926604e51d86" />
 
 구현방법 
 
@@ -210,10 +211,6 @@
 - 배경과 이 외의 오브젝트는 스텐실 버퍼값이 그대로(REF 0) ➡️ REF 0에 검은색 적용
 
 코드
-
-![램프 오브젝트 (Q type ➡️ Ref 7)](%EA%B0%88%EB%B8%8C/000002447967919453320240121013323311.png)
-
-램프 오브젝트 (Q type ➡️ Ref 7)
 
 ```csharp
 Pass {
@@ -227,10 +224,6 @@ Pass {
 		//...
 }
 ```
-
-![색상 필터 (Q type ➡️ Ref 7)](%EA%B0%88%EB%B8%8C/000002447967919467120240121013654497.png)
-
-색상 필터 (Q type ➡️ Ref 7)
 
 ```csharp
 Pass
@@ -262,7 +255,7 @@ Pass
 
 - 벡터의 외적을 이용하여 플레이어와 램프의 위치관계 구분 후 광원 적용여부 판정
 
-![000002447967320251220231107044823052.png](%EA%B0%88%EB%B8%8C/000002447967320251220231107044823052.png)
+<img width="803" height="519" alt="000002447967320251220231107044823052" src="https://github.com/user-attachments/assets/789f0c19-ad73-45ac-9133-83e9f7e5ad3e" />
 
 코드
 
@@ -284,7 +277,6 @@ if (lamp is Lamp)
 
 구현결과
 
-
 <img width="701" height="276" alt="Image" src="https://github.com/user-attachments/assets/da73dd4b-63f6-4e8b-8f79-8573525282c2" />
 
 ### II. 로렌치니 - 플레이어를 검출하여 시설을 방어하는 레이더 장치
@@ -294,14 +286,14 @@ if (lamp is Lamp)
 - 플레이어 검출 레이더를 시각적으로 표현
 - 최대 검출거리 안에 구조물이 있는 경우, 레이더 길이 조정
 
-![000002447967320174820231107044338938.png](%EA%B0%88%EB%B8%8C/000002447967320174820231107044338938.png)
+<img width="968" height="576" alt="000002447967320174820231107044338938" src="https://github.com/user-attachments/assets/ba8aea22-47ff-4d21-9ff2-12179ede7ecb" />
 
 구현방법 
 
 - 라인렌더러의 끝 좌표를 삼각함수 좌표(Cos **θ**, Sin **θ**)로 적용하여 회전 표현
 - 구조물에 레이더가 부딪히는 경우 반지름의 길이를 구조물까지의 거리로 변경
 
-![image.png](%EA%B0%88%EB%B8%8C/image%201.png)
+<img width="496" height="296" alt="image 1" src="https://github.com/user-attachments/assets/92d072c6-77b7-4983-877e-8dfe6545ba97" />
 
 코드
 
@@ -530,7 +522,7 @@ Stencil
 
 구현결과
 
-![000002447967319877020231107042358064.png](%EA%B0%88%EB%B8%8C/000002447967319877020231107042358064.png)
+<img width="1815" height="599" alt="000002447967319877020231107042358064" src="https://github.com/user-attachments/assets/2a9ddf1f-0cce-4738-bb07-2a1855585bee" />
 
 ### II. 오브젝트풀링 - 주로 사용하는 사용하는 오브젝트를 미리 생성
 
