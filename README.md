@@ -1,251 +1,612 @@
-# It's Alive 팀 Galvanic Bride 작품 진행상황 보고서 
-갈바닉 브라이드는 전기 능력을 보유한 주인공이 스텔스를 유지한채 스테이지를 해결하는 게임
-  
-## 기록할만한 구현 목록
-### 1. Skill - Galvanism : 플레이어가 기록한 경로를 따라 개구리를 이동시키는 스킬 (적 교란)   
-변경사항       
-- update()함수에 의해 매 프레임 기록되는 포인트 사이에서 방향 벡터 계산이 어려움  <br> →  특정 거리마다 포인트를 기록하도록 변경  
-- 플레이어가 기록한 경로를 가시적으로 표현하는데 사용되는 포인트를 빈번하게 생성/파괴할 경우 부하가 생김  <br> →  포인트를 오브젝트풀로 관리함   
-- 오브젝트 풀에서 Dequeue된 오브젝트들의 머테리얼을 순차적으로 관리하는데 어려움  <br> →  Dequeue된 오브젝트들을 List에 다시 담아 순차적으로 관리함  
-- 순차적으로 관리되는 오브젝트들이더라도 빈번한 스프라이트 컴포넌트를 가져올 경우 부하가 생김  <br> →  Tuple<GameObject, SpriteRenderer>로 관리함    
-- 스킬 시전간에 플레이어가 반드시 마우스 포인트를 개구리에서부터 시작할 보장이 없었다  <br> →  개구리와 최초 마우스 클릭 지점 사이를 보간하여 
+# 갈브
 
-　   
-> Q. Update() 호출 시, 매 프레임 기록되는 라인 렌더러의 좌표가 너무 많아서 각 좌표 사이의 방향 벡터를 계산할 경우 소숫점 아래까지 많이 동일하여 방향 벡터가 (0, 0, 0)으로 표시됨  
-![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/113d3b12-f321-4493-a984-481d81f87d42)   << 구현 목표  
-![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/f2eaeee7-830c-4b34-a94f-570c43f20e0c)   << 각 좌표사이의 방향 벡터가 제대로 계산되지 못함  
+# 프로젝트 소개
 
-A. 라인 렌더러의 좌표도 너무 많을 경우 부하가 생기기때문에 특정 거리(0.5f)씩 마다 좌표를 찍는 방식으로 변경  
-```C#
-void DrawMovingTrajectory()
-{
-    if ( /* ...(조건A) */  && Vector3.Distance(lastPos, mousePos) >= TRAJECTORYINTERVAL && /* ...(조건C) */ )    //TRAJECTORYINTERVAL = 0.5f;
+- 개발엔진 : Unity5(2020.3.30)
+- 개발기간 : 2022.04 ~2023.09
+- 출      시 : 2023.10
+- 게임설명 : 프랑켄슈타인의 원작소설을 바탕으로하며, 갈바니즘 이론(전기능력)을 주된 기믹으로 스테이지를 클리어하는 잠입, 퍼즐, 액션 게임
+
+[Galvanic Bride](https://store.steampowered.com/app/2516530?snr=5000_5100__)
+
+# 프로젝트 이력
+
+- 공모전
+    - 2022.08. ➡️ BIGS 출품 : 방구석 인디게임쇼 2022 온라인 전시
+    - 2023.08. ➡️ BIC 전시 : 부산인디게임페스티벌 2023 오프라인 전시
+- 크라우드 펀딩
+    - 2022.12. ➡️ 텀블벅 크라우드 펀딩 : 크라우드펀딩을 통해 목표금액의 665% 달성
+
+# 담당 파트
+
+- 게임 플레이 메인 프로그래머
+    - 플레이어 조작, 스킬, 성장
+    - 게임 기믹 장치
+    - 기반 시스템 : Game Manager, ObjectPool System, Database, Steam API
+
+- 쉐이더 프로그래머
+    - 스텐실 쉐이더
+
+# 기술설명
+
+구현 기술에 대한 설명이 필요한 주된 메커니즘들을 설명합니다
+
+[스킬 ](https://app.notion.com/p/125ce4f4d10880d8bd59c536a8ee1adc?pvs=21) : 뇌운, 블루프린트
+
+[장치](https://app.notion.com/p/125ce4f4d10880da8352c05f784713ca?pvs=21) : 램프, 로렌치니, 파워뱅크
+
+[기반시스템](https://app.notion.com/p/125ce4f4d10880aea93de337ef2db61a?pvs=21) : 스텐실 쉐이더, 오브젝트 풀링
+
+## 스킬
+
+### I. 뇌운 - 전기구름 투사체를 포물선으로 던지는 스킬
+
+구현목표 
+
+- 2D 탑다운 뷰의 게임에서 포물선 궤적과 투사체 투척을 표현
+
+![thunderStorm.png](%EA%B0%88%EB%B8%8C/thunderStorm.png)
+
+구현방법 
+
+- 라인렌더러를 이용하여 플레이어와 마우스사이 거리를 반주기로 하는 Sin 그래프를 통해 구현
+- x 좌표 : 임의의 값(30)으로 구간을 설정 (좌표 개수 : 30개)
+- y 좌표 : Sin그래프의 x 좌표로부터 얻어지는 값
+
+![sin.png](%EA%B0%88%EB%B8%8C/sin.png)
+
+코드
+
+```csharp
+ void DrawParabolicSkillTrajectory()
+ {
+     dist = Vector3.Distance(transform.position, GameManager.Instance.GetCurrentSceneT<InGameScene>().SkillSystem.worldMPos);
+     for (float i = 0; i < lr.positionCount ; i++)
+     {
+		     float b = GameManager.Instance.GetCurrentSceneT<InGameScene>().
+																										     SkillSystem.worldMPos;
+         cachedPos = 
+			         Vector3.Lerp(transform.position, b, (i + 2) / (pointCnt + 2));         
+         // +2를 한 이유 : 발에서부터가 아닌 손에서부터이니까
+         cachedPos.y += Mathf.Min(dist, sinMaxScale) *
+									          Mathf.Sin(Mathf.PI / (pointCnt + 2) * (i + 2));       
+         //sinScale * Mathf.Sin(Mathf.PI / dist * dist / pointCnt * i); 
+         //dist : Vector3.Distance(transform.position, Camera.main.ScreenToWorldPoint(screnMPos));
+         lr.SetPosition((int)i, cachedPos);
+
+     }
+ }
+```
+
+구현결과
+
+![11.gif](%EA%B0%88%EB%B8%8C/11.gif)
+
+![112.gif](%EA%B0%88%EB%B8%8C/112.gif)
+
+### II. 갈바니즘 - **플레이어가 기록한 경로를 따라 개구리를 이동시키는 스킬**
+
+구현목표 
+
+- update()함수에 의해 매 프레임 기록되는 포인트 사이에서 방향 벡터 계산이 어려움
+→ 특정 거리마다 포인트를 기록하도록 변경
+- 플레이어가 기록한 경로를 가시적으로 표현하는데 사용되는 포인트를 빈번하게 생성/파괴할 경우 부하가 생김
+→ 포인트를 오브젝트풀로 관리함
+- 스킬 시전간에 플레이어가 반드시 마우스 포인트를 개구리에서부터 시작할 보장이 없었다
+→ 개구리와 최초 마우스 클릭 지점 사이를 보간하여 중간 경로 삽입
+
+![image.png](%EA%B0%88%EB%B8%8C/image.png)
+
+구현방법 
+
+- 라인 렌더러의 좌표도 너무 많을 경우 부하가 생기기때문에 특정 거리(0.5f)씩 마다 좌표를 찍는 방식으로 변경
+    
+    ```csharp
+    void DrawMovingTrajectory()
     {
-        //최대 사용량을 초과할 경우 더 이상 그려지지 않는다
-        if (currentDT >= allowanceDT) 
+        if ( /* ...(조건A) */  && Vector3.Distance(lastPos, mousePos) >= TRAJECTORYINTERVAL && /* ...(조건C) */ )    //TRAJECTORYINTERVAL = 0.5f;
         {
-            return; 
+            //최대 사용량을 초과할 경우 더 이상 그려지지 않는다
+            if (currentDT >= allowanceDT) 
+            {
+                return; 
+            }
+    
+            //특정 거리(0.5f)마다 점 추가 시퀀스    
+            AddTrajectoryPoint(Vector3.zero);
         }
-
-        //특정 거리(0.5f)마다 점 추가 시퀀스    
-        AddTrajectoryPoint(Vector3.zero);
     }
-}
-```
-  　  
-  　  
-> Q. 플레이어에의해 그려지는 라인 렌더러를 쉽게 식별하기 위해 0.5f거리마다 노란색 점을 표시하는데, 지속적으로 화살표 오브젝트를 생성/파괴할 경우 무거운 Instantiate()/Destroy()를 호출하여 부하를 일으킨다
-
-A. 화살표 오브젝트를 오브젝트 풀링하여 관리하면 빈번한 생성과 파괴를 피할 수 있다.
-```C#
-Queue<GameObject> pointPool = new Queue<GameObject>();          //포인트 풀
-
-//화살표 오브젝트 풀 생성
-void GeneratePointPool()
-{
-    for (int i = 0; i < poolCount; i++)
-    {
-        pointPool.Enqueue(GeneratePoint());
-    }
-}
-
-//포인트 생성 함수
-GameObject GeneratePoint()
-{
-    GameObject go = Instantiate(point, transform);
-    go.SetActive(false);
+    ```
     
-    return go;
-}
 
-//포인트 요청
-GameObject GetPointFromQueue()
-{
-    //예외처리를 통해 포인트가 없는 경우를 대비
-    try
+- 화살표 오브젝트를 오브젝트 풀링하여 관리하면 빈번한 생성과 파괴를 피할 수 있다.
+    
+    ```csharp
+    Queue<GameObject> pointPool = new Queue<GameObject>();          //포인트 풀
+    
+    //화살표 오브젝트 풀 생성
+    void GeneratePointPool()
     {
-        return pointPool.Dequeue();
+        for (int i = 0; i < poolCount; i++)
+        {
+            pointPool.Enqueue(GeneratePoint());
+        }
     }
-    catch
+    
+    //포인트 생성 함수
+    GameObject GeneratePoint()
     {
-        pointPool.Enqueue(GeneratePoint());             //추가 생산하여 인큐,
-        return pointPool.Dequeue();                     //그리고 반환
-    }
-}
-```
-  　  
-  　  
-> Q. 월드에 배치된 포인트의 흐름을 확인시켜주기 위해 각 포인트 스프라이트의 머테리얼을 순차적으로 한 개씩 머테리얼을 변경해줘야 하는데, 단순히 오브젝트 풀에서 Dequeue()된 것만으로는 관리가 어려움
-  
-A. Dequeue()된 오브젝트를 List<GameObject>에 넣어서 순차적으로 관리
-```C#
-List<GameObject> pointList = new List<GameObject>();            //Enqueue 포인트 리스트
- 
-void PointOnTrajectory(Vector3 _position)
-{
-    GameObject go = GetPointFromQueue();
-    pointList.Add(go);                          //큐에서 나온 포인트를 리스트로 삽입(순차적인 머테리얼 관리와 일괄 비활을 위한 삽입)
- 
-    // ...
-}
- 
-IEnumerator IterateListForChangingMat()
-{
-    for (int i = 0; i < pointList.Count; i++)      //for 을 통해 순차적으로 머테리얼 변경
-    {
-        pointList[i].getComponent<SpriteReneder>().material = glowMat;             //머테리얼 변경
-        pointList[i == 0 ? pointList.Count - 1 : i - 1].getComponent<SpriteRenderer>().material = defaultMat;     //머테리얼 원복
+        GameObject go = Instantiate(point, transform);
+        go.SetActive(false);
         
-        yield return INTERATION_INTERVAL;
+        return go;
     }
-}
-```
-　  
-　    
-> Q. 월드에 배치된 포인트 한 번에 한 개씩 Glow Effect를 부여하려고 할 때, 매 번 getComponent<SpriteRenederer>()를 하면 부하가 생김  
-![gv2](https://github.com/mw08081/Modern_Prometheus/assets/58582985/870a7f5f-48dd-4015-a8e4-fd3fdd55e69d)  << 구현목표  
-
-A. 포인트 오브젝트 풀을 `Queue<GameObject>`가 아닌 `Queue<Tuple<Gameobject, SpriteRenderer>>`로 관리한다  
-```C#
-Queue<Tuple<GameObject, SpriteRenderer>> pointPool = new Queue<Tuple<GameObject, SpriteRenderer>>();          //포인트 풀
-List<Tuple<GameObject, SpriteRenderer>> pointList = new List<Tuple<GameObject, SpriteRenderer>>();            //Enqueue 포인트 리스트
-
-//풀 생성과 풀 오브젝트 리퀘스트
-Tuple<GameObject, SpriteRenderer> GeneratePoint()
-{
-    //Instantiate 과정
-
-    Tuple<GameObject, SpriteRenderer> tuple                     //최초에 스프라이트렌더러를 받아옴
-             = new Tuple<GameObject, SpriteRenderer>(go, go.GetComponentInChildren<SpriteRenderer>());    
-    return tuple;
-}
-Tuple<GameObject, SpriteRenderer> GetPointFromQueue()
-{
-   // ...
-}
- 
-//tuple.Item2 에 저장된 스프라이트 렌더러 머테리얼 
-IEnumerator IterateListForChangingMat()
-{
-    for (int i = 0; i < pointList.Count; i++)
-    {
-        pointList[i].Item2.material = glowMat;
-        pointList[i == 0 ? pointList.Count - 1 : i - 1].Item2.material = defaultMat;
-        yield return INTERATION_INTERVAL;
-    }
-    isInIterating = false;
-}
-```
-　  
-　  
-> Q. 개구리와 최초 마우스 클릭 지점사이를 보간하지 않을 경우 개구리가 한 번에 엄청난 거리를 이동하는 버그가 생긴다
-  
-![nointerpol](https://github.com/mw08081/Modern_Prometheus/assets/58582985/74505b0d-7608-4c9e-aef5-4c09bb6febdd)  << 보간 전  
-![interpol](https://github.com/mw08081/Modern_Prometheus/assets/58582985/fbeb97f2-af2a-4424-8c23-c942400556e6)    << 보간 후  
-A. 개구리와 최초 마우스 입력 위치가 0.5f 이상일 경우 그 사이를 0.5f단위로 보간하여 라인렌더러에 좌표를 삽입한다
-```C#
-bool InterpolateTrajectory()
-{
-    // ...
-    float interpolDist = Vector3.Distance(mousePos, critterPos);                               //개구리와 최초 마우스 입력 위치의 거리 계산
-    if (interpolDist < 0.6f) return true;                                                      //0.6미만이면 보간할 필요 없음(취소조건)
-
-    //이후 거리에 따른 경로 보간
-    Vector3 interpolPos;
     
-    int interpolCnt = (int)(interpolDist / TRAJECTORYINTERVAL);             //보간 좌표 개수
-    for (float i = 1; i < interpolCnt; i++)
+    //포인트 요청
+    GameObject GetPointFromQueue()
     {
-        interpolPos = Vector3.Lerp(critterPos, mousePos, i / interpolCnt);              //Lerp()를 이용한 보간
-        AddTrajectoryPoint(interpolPos);
-        //if( 보간 취소 조건 ) return false;                              //더이상 경로를 그릴 수 없다
+        //예외처리를 통해 포인트가 없는 경우를 대비
+        try
+        {
+            return pointPool.Dequeue();
+        }
+        catch
+        {
+            pointPool.Enqueue(GeneratePoint());             //추가 생산하여 인큐,
+            return pointPool.Dequeue();                     //그리고 반환
+        }
     }
-    return true;
+    
+    ```
+    
+
+- 개구리와 최초 마우스 입력 위치가 0.5f 이상일 경우 그 사이를 0.5f단위로 보간하여 라인렌더러에 좌표를 삽입한다
+    
+    ```csharp
+    bool InterpolateTrajectory()
+    {
+        // ...
+        float interpolDist = Vector3.Distance(mousePos, critterPos);                               //개구리와 최초 마우스 입력 위치의 거리 계산
+        if (interpolDist < 0.6f) return true;                                                      //0.6미만이면 보간할 필요 없음(취소조건)
+    
+        //이후 거리에 따른 경로 보간
+        Vector3 interpolPos;
+        
+        int interpolCnt = (int)(interpolDist / TRAJECTORYINTERVAL);             //보간 좌표 개수
+        for (float i = 1; i < interpolCnt; i++)
+        {
+            interpolPos = Vector3.Lerp(critterPos, mousePos, i / interpolCnt);              //Lerp()를 이용한 보간
+            AddTrajectoryPoint(interpolPos);
+            //if( 보간 취소 조건 ) return false;                              //더이상 경로를 그릴 수 없다
+        }
+        return true;
+    }
+    ```
+    
+
+구현결과
+
+보간전, 보간후, 드로우 지프
+
+### III. 블루프린트 - 맵의 구조를 스캔하는 스킬
+
+구현목표 
+
+- 특정한 오브젝트를 오브젝트 타입 색상으로 하이라이트하여 표시
+- 그 외의 구조물은 더 어두운 검은색으로 표시
+
+![000002447967919491120240121014413536.png](%EA%B0%88%EB%B8%8C/000002447967919491120240121014413536.png)
+
+구현방법 
+
+- 특정 색상으로 표시하고자 하는 오브젝트에 스텐실 버퍼의 REF값 수정후 머테리얼이 적용
+- 스킬 사용시 스텐실 버퍼 값과 비교하여 동일한 버퍼 값일 경우 필터의 색상을 채우는 필터를 활성화
+- 배경과 이 외의 오브젝트는 스텐실 버퍼값이 그대로(REF 0) ➡️ REF 0에 검은색 적용
+
+코드
+
+![램프 오브젝트 (Q type ➡️ Ref 7)](%EA%B0%88%EB%B8%8C/000002447967919453320240121013323311.png)
+
+램프 오브젝트 (Q type ➡️ Ref 7)
+
+```csharp
+Pass {
+		Stencil
+		{
+		    Ref [_StencilValue]
+		    Comp Greater
+		    Pass Replace
+		    //Fail IncrSat
+		}
+		//...
 }
 ```
 
+![색상 필터 (Q type ➡️ Ref 7)](%EA%B0%88%EB%B8%8C/000002447967919467120240121013654497.png)
 
-　  
-　  
-### 2. Skill - bluePrint : 청사진과 같이 현재 플레이어 주변의 맵 상황을 확인하는 스킬
-![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/81544dc2-c76c-443a-956b-968b6222e548)  
-변경사항  
-- 특정한 오브젝트를 해당하는 색상으로 표시하는데, 각 오브젝트들의 스텐실 스프라이트를 추가로 배치하여 두개씩 관리하기엔 양이 너무 많아 관리하기 어려움  <br> →  생삭으로 표시될 오브젝트의 스프라이트를 처음부터 스텐실 버퍼를 가지며, 온전하게 그려내는 머테리얼로 설정한 뒤 맵 전체에 스텐실 버퍼를 표시하는 필터를 배치
-- 색상이 적용된 오브젝트 이외에는 좀 더 어두운 색상으로 맵을 가리듯 표시하는 방법 모색  <br> →  스텐실 버퍼가 없는 곳은 스텐실 버퍼값이 0이므로 스텐실 버퍼 값이 0인 부분을 검은색으로 설정
+색상 필터 (Q type ➡️ Ref 7)
 
-　  
-> Q. 최초엔 스텐실 머테리얼이 적용된 스프라이트를 블루프린트 스킬 활성화 시 setActive(true) 설정하고, 스킬 비활성화 시엔 setActive(false)시키는 방식으로 고안되었다. 그러나 setActive()시킬 오브젝트가 한 개일 경우엔 문제가 없지만 이러한 오브젝트가 많을 경우에는 관리가 어렵고 불필요한 작업이 발생할 수 있을 것 같아서 더 좋은 방식을 고안해기로 했다  
-
-![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/a28ab91c-963d-421d-a388-bd33b8c289a1)  
-![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/8e4fc2c5-37bc-49b0-a942-3e9b7f0fa64d)  << 머테리얼이 stencil_Q인 스프라이트를 on/off 해야한다
-
-A. 기본적으로 색상이 입혀질 오브젝트는 그대로 그리며, 스텐실 버퍼를 변경하기만 한다. 그리고 맵 전체를 덮는 스텐실 필터 오브젝트를 생성하여 스텐실 필터와 겹쳐지며 스텐실 버퍼값이 동일한 경우 해당 부분에 색상을 표시하는 방식으로 진행한다
-```shader
-// 오브젝트는 스텐실 버퍼값만 변경(Pass Replace)하면서 항상 그대로 그려낸다(Comp Always)
+```csharp
 Pass
 {
-    Tags { "LightMode" = "Universal2D" }
-
-    Stencil
-    {
-        Ref [_StencilValue]
-        Comp Always
-        Pass Replace
-    }
-    //...
-}
-    
-//스텐실 버퍼 필터 오브젝트는 스텐실 버퍼값은 변경하지 않고, 스텐실 버퍼값이 동일한 경우에만 그린다(Comp Equal)
-Pass
-{
-    Tags { "LightMode" = "Universal2D" }
-
     Stencil
     {
         Ref[_StencilValue]
         Comp Equal
     }
-    //....
+    /...
 }
 ```
-　  
-　  
-> Q. 색상이 표시되는 오브젝트 이외에 벽이나 길 같은 것은 좀 더 검은색으로 보이게 하고싶었다 게임자체를 어둡게 할 경우, 스텐실 필터의 색상도 어두워지므로 그렇게 구현할 수는 없었다.
 
-![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/fdd884a9-c310-49dd-a1ce-a3140258c965) << 구현 전  
-![image](https://github.com/mw08081/Modern_Prometheus/assets/58582985/083e96d9-5556-4457-8ea1-35a2d1253795) << 구현 후
+구현결과
 
+![zz.gif](%EA%B0%88%EB%B8%8C/zz.gif)
 
-A. 좀 더 검은색으로 표시된 부분들의 공통점을 생각해보니 스텐실 버퍼가 변경되지 않은( 스텐실 버퍼 == 0) 부분이었다. 그래서 스텐실 버퍼 필터와 동일한 방식으로 스텐실 버퍼가 0인 부분을 짙은 회색으로 색을 입히면 될 것같다고 생각했다.
-```shader
-// 사전에 스텐실 버퍼값을 변경할 오브젝트는 존재하지 않는다( 스텐실 버퍼가 0인 그대로 진행)
+---
 
-// 스텐실 버퍼가 0인 부분을 좀 더 검은색으로 색을 입힐 스텐실 버퍼 필터의 쉐이더 pass 내용
-Pass
+## 장치
+
+### I. 램프 - 적에게 플레이어를 노출시키는 광원
+
+구현목표 
+
+- 원형 콜라이더를 사용하기때문에, 벽 뒤에 있는 플레이어는 광원 밖 판정 구현
+
+구현방법 
+
+- 벡터의 외적을 이용하여 플레이어와 램프의 위치관계 구분 후 광원 적용여부 판정
+
+![000002447967320251220231107044823052.png](%EA%B0%88%EB%B8%8C/000002447967320251220231107044823052.png)
+
+코드
+
+```csharp
+Lamp lamp = collision.transform.parent.GetComponent<Lamp>();
+if (lamp is Lamp)
 {
-    Tags { "LightMode" = "Universal2D" }
+    Vector3 vectorPivot = collision.transform.parent.GetComponentInChildren<ParticleSystem>().transform.position;
 
-    Stencil
+    if (lamp.isWallLamp == false ||                 //wallLamp가 아니면 바로 활성화
+        (lamp.isWallLamp == true && 
+        Vector3.Cross((playerCenterPos - vectorPivot).normalized, Vector3.right).z > 0))    //wallLamp면 벡터 조건 검사가 필요함
     {
-        Ref 0
-        Comp Equal
+        IsVisible = true;
+        ps.Updating_IsActiveReady();
     }
-    //....
 }
 ```
 
-  　  
-  　  
- 
+구현결과
 
-## 기억에 남는 작업
-1. 스텐실
-1. 최적화
+![2-1.gif](%EA%B0%88%EB%B8%8C/2-1.gif)
 
-1. 물에서 파이프 파이프에서 물로의 전기 전이, 개구리의 이동 (스킬이야기)
-2. 에셋을 구매하여 공부하고, 새로운 코드 컨벤션 구축
-3.  
+### II. 로렌치니 - 플레이어를 검출하여 시설을 방어하는 레이더 장치
 
+구현목표 
+
+- 플레이어 검출 레이더를 시각적으로 표현
+- 최대 검출거리 안에 구조물이 있는 경우, 레이더 길이 조정
+
+![000002447967320174820231107044338938.png](%EA%B0%88%EB%B8%8C/000002447967320174820231107044338938.png)
+
+구현방법 
+
+- 라인렌더러의 끝 좌표를 삼각함수 좌표(Cos **θ**, Sin **θ**)로 적용하여 회전 표현
+- 구조물에 레이더가 부딪히는 경우 반지름의 길이를 구조물까지의 거리로 변경
+
+![image.png](%EA%B0%88%EB%B8%8C/image%201.png)
+
+코드
+
+```csharp
+// 라인렌더러를 삼각함수로 회전
+void RotatingDetectRay()
+{
+    float angle = curAngleTime / DEFAULT_SONARSPEED * 360;
+
+    curRayPos.x = transform.position.x + 
+										    Mathf.Cos(-angle * Mathf.Deg2Rad) * curSonarRadius;
+    curRayPos.y = transform.position.y + 
+										    Mathf.Sin(-angle * Mathf.Deg2Rad) * curSonarRadius;
+
+    line.SetPosition(1, curRayPos);
+}
+
+// 레이케스팅으로 플레이어 검출
+void DetectOnRay()
+{
+    //레이케스팅을 정중앙(transform.position)에서부터 시작하지 않기위한 시작점 배치
+    RaycastHit2D hit = 
+				    Physics2D.Raycast(transform.position + (curRayPos - transform.position).normalized * 0.8f, 
+													    (curRayPos - transform.position).normalized,
+													     DEFAULT_SONARRADIUS,
+													     detectLayer);
+    try
+    {
+        //충돌할 경우 레이 감소
+        if (hit.collider != null)
+        {
+            //레이 감소
+            curSonarRadius = Vector3.Distance(hit.point, transform.position);
+
+            //레이 감소상태에서 플레이어일 경우 이벤트 발생
+            if (hit.collider.CompareTag("Player") && canDetect == true)
+            
+            /....
+```
+
+구현결과
+
+![2-2.gif](%EA%B0%88%EB%B8%8C/2-2.gif)
+
+### III. 파워뱅크 - 여러 장치에 전력을 공급하는 장치
+
+구현목표 
+
+- 커스텀 에디터를 통해 씬에 배치된 장치들을 파워뱅크에 연결하는 작업 소요시간 단축
+
+구현방법 
+
+- 커스텀 에디터를 이용하여 레벨 작업 소요시간 단축
+
+코드
+
+```csharp
+// 에디터에 점 찍는 함수
+private void OnSceneGUI()
+{
+    if (powerLineConnector.isFinWriting == true) return;
+
+    if (Event.current.type != EventType.MouseDown || powerLineConnector.isWriting == false) return;
+
+    var mousePosition = Event.current.mousePosition * EditorGUIUtility.pixelsPerPoint;
+    mousePosition.y = Camera.current.pixelHeight - mousePosition.y;
+
+    var worldPosTmp = Camera.current.ScreenPointToRay(mousePosition).origin;
+    var worldPos = new Vector3(Mathf.RoundToInt(worldPosTmp.x), Mathf.RoundToInt(worldPosTmp.y), 0);
+
+    powerLineConnector.AddPoint(worldPos);
+}
+
+// 찍힌 점을 기반으로 라인렌더러 연결
+public void Create_Line()
+{
+    isFinWriting = true;
+    int lineCnt = 0;
+
+    try
+    {
+        powerSource = GetComponent<PowerSourceDevice>().powerSource;
+
+        if (powerSource == null) throw new System.Exception("Power Source Binding First");
+    }
+    catch(System.Exception e)
+    {
+#if DEV
+        Debug.LogWarning(e.Message);
+#endif
+        return;
+    }
+
+    try
+    {
+        lineCnt = disConnectPoints.Count;
+    }
+    finally
+    {
+        for (int i = 0; i <= lineCnt; i++)
+        {
+            lineIdx = i;
+            GameObject powerLine = new GameObject("PowerLine_" + i);
+
+            Init_LineRenedere(powerLine);
+            StartCoroutine(Connect_PowerLine(powerLine));
+        }
+    }
+}
+
+void Init_LineRenedere(GameObject go)
+{
+    go.tag = "PowerLine";
+    LineRenderer lr = go.AddComponent<LineRenderer>();
+
+    lr.gameObject.transform.SetParent(transform);
+
+    Color lineColor;
+    ColorUtility.TryParseHtmlString("#7F8C8C", out lineColor);
+    lr.startColor = lineColor;
+    lr.endColor = lineColor;
+
+    lr.numCornerVertices = 5;
+    lr.numCapVertices = 5;
+
+    lr.startWidth = 0.1f;
+    lr.endWidth = 0.1f;
+
+    lr.sortingLayerID = SortingLayer.NameToID("Platform");
+    lr.sortingOrder = 2;
+
+    lr.material = Resources.Load<Material>("PublicResources/Materials/Stencil_PowerLine");
+}
+
+IEnumerator Connect_PowerLine(GameObject powerLine)
+{
+    LineRenderer lr = powerLine.GetComponent<LineRenderer>();
+    Vector3[] points = connectPoints.ToArray();
+
+    int posIdx = 0;
+    int disConnectPointIdx = lineIdx;
+    disConnectPointIdx = disConnectPointIdx >= disConnectPoints.Count ? disConnectPoints.Count - 1 : disConnectPointIdx;
+
+    //Point Setting
+    stPos = lineIdx == 0 ? transform.position : disConnectPoints[lineIdx - 1].disConnectEnd;
+
+    //Start Point
+    lr.positionCount = 1;
+    lr.SetPosition(posIdx++, stPos);
+
+    //Middle Point
+    int i = connectPoints.FindIndex(e => e == stPos);
+    i = i < 0 ? 0 : i;
+    for (; i < points.Length; i++)
+    {
+        lr.positionCount++;
+        lr.SetPosition(posIdx++, points[i]);
+
+        if (disConnectPoints.Count != 0 &&                                               //끊김포인트가 있고
+            points[i] == disConnectPoints[disConnectPointIdx].disConnectStart)        //마지막 포인트가 끊김 시작포인트일 경우
+        {
+            yield break;
+        }
+    }
+
+    //End Point
+    lr.positionCount++;
+    lr.SetPosition(posIdx++, powerSource.transform.position);
+
+    yield return null;
+
+#if UNITY_EDITOR
+    UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene());
+#endif
+}
+```
+
+구현결과
+
+![2-3.gif](%EA%B0%88%EB%B8%8C/2-3.gif)
+
+![322.gif](%EA%B0%88%EB%B8%8C/322.gif)
+
+---
+
+## 기반시스템
+
+### I. 스텐실 쉐이더
+
+구현목표 
+
+- 벽 뒤의 플레이어를 시각적으로 표시
+
+구현방법 
+
+- 벽보다 먼저 그려진 스텐실 버퍼값이 클 경우, 벽 버퍼값으로 수정
+- 벽 버퍼값과 벽 필터 버퍼값이 같으면 필터적용
+
+코드
+
+```csharp
+// 플레이어 스텐실
+Stencil 
+{
+	Ref[_StencilRef]   // Ref 11
+	Comp[_StencilComp]  //Always
+	Pass Replace
+}
+
+// 벽 스텐실
+Stencil
+{
+    Ref [_StencilValue] // Ref 10
+	  Comp Less           // 플레이어 버퍼를 만나서 10으로 변경
+    Pass Replace
+}
+
+// 필터 스텐실
+Stencil
+{
+    Ref[_StencilValue]  // Ref 10
+    Comp Equal          // Ref 10인 경우 필터 색상 적용
+}
+```
+
+구현결과
+
+![000002447967319877020231107042358064.png](%EA%B0%88%EB%B8%8C/000002447967319877020231107042358064.png)
+
+### II. 오브젝트풀링 - 주로 사용하는 사용하는 오브젝트를 미리 생성
+
+구현목표 
+
+- 주로 사용하는 오브젝트들을 미리 생성하여, 잦은 생성/파괴로 인한 가비지 컬렉터 호출을 방지
+- 오브젝트 풀이 비어있는 경우, 추가 생성 로직 구현
+
+구현방법 
+
+- Queue<T>를 형식의 풀을 이용함으로써 사용가능한 오브젝트 탐색 시간을 제거
+
+코드
+
+```csharp
+// Enum 으로 이펙트의 종류를 구분하여, List< Pool > 생성
+// Pool은 Queue<T>로 생성하여, 사용가능한 오브젝트를 탐색하는 과정 제거
+void GenerateSkillEffectPool()
+{
+    skillEffectPool = new List<Queue<GameObject>>();
+    for (int i = 0; i < skillEffectPrefabs.Length; i++)
+    {
+        skillEffectPool.Add(new Queue<GameObject>());
+        for (int j = 0; j < skillEffectPrefabs[i].cnt; j++)
+        {
+            GameObject go = 
+		            Instantiate(skillEffectPrefabs[i].skillEffectPrefab, 
+							            skillEffectParent
+		            );           //Instantiate Prefab 
+		            
+            go.GetComponent<SkillEffect>().Initialize_SkillEffect();
+            skillEffectPool[i].Enqueue(go);
+        }
+    }
+}
+
+// 요청하는 이팩트의 타입을 Enum으로 구분
+public void ServeSkillEffect(SkillEffectCode skillEffectCode, Vector2 spawnPos)
+{
+		// 오브젝트가 없는 경우, 추가요청
+    if (skillEffectPool[(int)skillEffectCode].Count == 0)
+    {
+        skillEffectPool[(int)skillEffectCode].Enqueue(
+				        Additionally_GenerateSkillEffect(skillEffectCode)
+        );
+    }
+
+    GameObject go = skillEffectPool[(int)skillEffectCode].Dequeue();
+    go.GetComponent<SkillEffect>().Dequeue_SkillEffect(spawnPos);
+}
+
+// 오브젝트 추가 요청시, 생성하여 반환
+GameObject Additionally_GenerateSkillEffect(SkillEffectCode skillEffectCode)
+{
+    GameObject go = Instantiate(skillEffectPrefabs[(int)skillEffectCode].skillEffectPrefab, skillEffectParent);           //Instantiate Prefab
+    go.GetComponent<SkillEffect>().Initialize_SkillEffect();                                                          //Hide Prefab
+
+    return go;
+}
+
+// --------------------------------
+
+// 이펙트에서 스스로 초기화 후, 멤버변수로 갖고있던 이펙트 타입을 매개변수로 넘김
+Initialize_SkillEffect();
+GameManager.Instance.GetCurrentSceneT<InGameScene>().
+					PoolSystem.ReturnSkillEffect(
+									gameObject, skillEffectCode
+					);
+
+// 오브젝트 회수 시, 오브젝트 타입 Enum과 함께 반환
+public void ReturnSkillEffect(GameObject gameObject, SkillEffectCode skillEffectCode)
+{
+    skillEffectPool[(int)skillEffectCode].Enqueue(gameObject);
+}
+
+```
+
+![오브젝트 요청함수는 오버로딩으로 다양하게 요청가능](%EA%B0%88%EB%B8%8C/image%202.png)
+
+오브젝트 요청함수는 오버로딩으로 다양하게 요청가능
+
+구현결과
+
+![32.gif](%EA%B0%88%EB%B8%8C/32.gif)
 
 
 0. TeamWork
