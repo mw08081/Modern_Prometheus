@@ -80,9 +80,10 @@
 
 구현결과
 
-![11.gif](%EA%B0%88%EB%B8%8C/11.gif)
+<img width="1126" height="416" alt="Image" src="https://github.com/user-attachments/assets/81b524c8-2341-45f2-a3aa-65bac714c12e" />
 
-![112.gif](%EA%B0%88%EB%B8%8C/112.gif)
+<img width="1126" height="416" alt="Image" src="https://github.com/user-attachments/assets/091a491f-3c14-4779-98d3-9a5cdce3ae34" />
+
 
 ### II. 갈바니즘 - **플레이어가 기록한 경로를 따라 개구리를 이동시키는 스킬**
 
@@ -240,7 +241,7 @@ Pass
 
 구현결과
 
-![zz.gif](%EA%B0%88%EB%B8%8C/zz.gif)
+<img width="855" height="467" alt="Image" src="https://github.com/user-attachments/assets/e6f44427-4e98-4088-98be-bded68455f87" />
 
 ---
 
@@ -278,7 +279,8 @@ if (lamp is Lamp)
 
 구현결과
 
-![2-1.gif](%EA%B0%88%EB%B8%8C/2-1.gif)
+
+<img width="701" height="276" alt="Image" src="https://github.com/user-attachments/assets/da73dd4b-63f6-4e8b-8f79-8573525282c2" />
 
 ### II. 로렌치니 - 플레이어를 검출하여 시설을 방어하는 레이더 장치
 
@@ -337,7 +339,7 @@ void DetectOnRay()
 
 구현결과
 
-![2-2.gif](%EA%B0%88%EB%B8%8C/2-2.gif)
+<img width="482" height="397" alt="Image" src="https://github.com/user-attachments/assets/da7f3493-91a5-4b6c-b084-26038299ae34" />
 
 ### III. 파워뱅크 - 여러 장치에 전력을 공급하는 장치
 
@@ -474,9 +476,10 @@ IEnumerator Connect_PowerLine(GameObject powerLine)
 
 구현결과
 
-![2-3.gif](%EA%B0%88%EB%B8%8C/2-3.gif)
 
-![322.gif](%EA%B0%88%EB%B8%8C/322.gif)
+<img width="950" height="346" alt="Image" src="https://github.com/user-attachments/assets/7f3cc8ad-05f2-4ac3-8889-2218e7867e7b" />
+
+<img width="765" height="346" alt="Image" src="https://github.com/user-attachments/assets/17cd193d-15ce-458a-886f-2a27daf8f097" />
 
 ---
 
@@ -606,7 +609,7 @@ public void ReturnSkillEffect(GameObject gameObject, SkillEffectCode skillEffect
 
 구현결과
 
-![32.gif](%EA%B0%88%EB%B8%8C/32.gif)
+<img width="869" height="346" alt="Image" src="https://github.com/user-attachments/assets/608bcd44-317e-488c-86ca-abea32250300" />
 
 
 0. TeamWork
