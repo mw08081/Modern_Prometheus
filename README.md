@@ -29,6 +29,7 @@
 
 # 기술설명
 
+<blockquote>
 구현 기술에 대한 설명이 필요한 주된 메커니즘들을 설명합니다
 
 [스킬 ](https://app.notion.com/p/125ce4f4d10880d8bd59c536a8ee1adc?pvs=21) : 뇌운, 블루프린트
@@ -37,6 +38,7 @@
 
 [기반시스템](https://app.notion.com/p/125ce4f4d10880aea93de337ef2db61a?pvs=21) : 스텐실 쉐이더, 오브젝트 풀링
   
+</blockquote>
 <br/>
 <br/>
 <br/>
@@ -46,6 +48,8 @@
 
 ### I. 뇌운 - 전기구름 투사체를 포물선으로 던지는 스킬
 
+<blockquote>
+	
 구현목표 
 
 - 2D 탑다운 뷰의 게임에서 포물선 궤적과 투사체 투척을 표현
@@ -90,8 +94,12 @@
 
 <img width="1126" height="416" alt="Image" src="https://github.com/user-attachments/assets/091a491f-3c14-4779-98d3-9a5cdce3ae34" />
 
+</blockquote>
 
 ### II. 갈바니즘 - **플레이어가 기록한 경로를 따라 개구리를 이동시키는 스킬**
+
+
+<blockquote>
 
 구현목표 
 
@@ -197,7 +205,12 @@
 ![interpol](https://github.com/mw08081/Modern_Prometheus/assets/58582985/fbeb97f2-af2a-4424-8c23-c942400556e6)    << 개구리 이동: 보간 후  
 
 
+</blockquote>
+
 ### III. 블루프린트 - 맵의 구조를 스캔하는 스킬
+
+
+<blockquote>
 
 구현목표 
 
@@ -243,7 +256,8 @@ Pass
 
 <img width="855" height="467" alt="Image" src="https://github.com/user-attachments/assets/e6f44427-4e98-4088-98be-bded68455f87" />
 
----
+
+</blockquote>
   
 <br/>
 <br/>
@@ -253,6 +267,9 @@ Pass
 ## 장치
 
 ### I. 램프 - 적에게 플레이어를 노출시키는 광원
+
+
+<blockquote>
 
 구현목표 
 
@@ -286,7 +303,13 @@ if (lamp is Lamp)
 
 <img width="701" height="276" alt="Image" src="https://github.com/user-attachments/assets/da73dd4b-63f6-4e8b-8f79-8573525282c2" />
 
+
+</blockquote>
+
 ### II. 로렌치니 - 플레이어를 검출하여 시설을 방어하는 레이더 장치
+
+
+<blockquote>
 
 구현목표 
 
@@ -345,7 +368,13 @@ void DetectOnRay()
 
 <img width="482" height="397" alt="Image" src="https://github.com/user-attachments/assets/da7f3493-91a5-4b6c-b084-26038299ae34" />
 
+
+</blockquote>
+
 ### III. 파워뱅크 - 여러 장치에 전력을 공급하는 장치
+
+
+<blockquote>
 
 구현목표 
 
@@ -485,7 +514,8 @@ IEnumerator Connect_PowerLine(GameObject powerLine)
 
 <img width="765" height="346" alt="Image" src="https://github.com/user-attachments/assets/17cd193d-15ce-458a-886f-2a27daf8f097" />
 
----
+
+</blockquote>
   
 <br/>
 <br/>
@@ -495,6 +525,9 @@ IEnumerator Connect_PowerLine(GameObject powerLine)
 ## 기반시스템
 
 ### I. 스텐실 쉐이더
+
+
+<blockquote>
 
 구현목표 
 
@@ -536,7 +569,13 @@ Stencil
 
 <img width="1815" height="599" alt="000002447967319877020231107042358064" src="https://github.com/user-attachments/assets/2a9ddf1f-0cce-4738-bb07-2a1855585bee" />
 
+
+</blockquote>
+
 ### II. 오브젝트풀링 - 주로 사용하는 사용하는 오브젝트를 미리 생성
+
+
+<blockquote>
 
 구현목표 
 
@@ -617,6 +656,7 @@ public void ReturnSkillEffect(GameObject gameObject, SkillEffectCode skillEffect
 <img width="869" height="346" alt="Image" src="https://github.com/user-attachments/assets/608bcd44-317e-488c-86ca-abea32250300" />
 
 
+</blockquote>
   
 <br/>
 <br/>
