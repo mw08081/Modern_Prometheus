@@ -32,11 +32,11 @@
 <blockquote>
 구현 기술에 대한 설명이 필요한 주된 메커니즘들을 설명합니다
 
-[스킬 ](https://app.notion.com/p/125ce4f4d10880d8bd59c536a8ee1adc?pvs=21) : 뇌운, 블루프린트
+[스킬](https://github.com/mw08081/Modern_Prometheus#%EC%8A%A4%ED%82%AC) : 뇌운, 블루프린트
 
-[장치](https://app.notion.com/p/125ce4f4d10880da8352c05f784713ca?pvs=21) : 램프, 로렌치니, 파워뱅크
+[장치](https://github.com/mw08081/Modern_Prometheus#%EC%9E%A5%EC%B9%98) : 램프, 로렌치니, 파워뱅크
 
-[기반시스템](https://app.notion.com/p/125ce4f4d10880aea93de337ef2db61a?pvs=21) : 스텐실 쉐이더, 오브젝트 풀링
+[기반시스템](https://github.com/mw08081/Modern_Prometheus#%EA%B8%B0%EB%B0%98%EC%8B%9C%EC%8A%A4%ED%85%9C) : 스텐실 쉐이더, 오브젝트 풀링
   
 </blockquote>
 <br/>
